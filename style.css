@@ -1,0 +1,52 @@
+:root {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+
+  /* #region Scrollbar Firefox */
+  scrollbar-color: #6649b8 #1e1e24;
+  scrollbar-width: thin;
+  /* #endregion */
+}
+
+body {
+  color: black;
+  background-color: darkgray;
+  margin: 0;
+  padding: 0;
+}
+
+/* #region Scrollbar Chrome */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+/* #endregion */
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+.navbar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--bg-primary);
+}
+
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
