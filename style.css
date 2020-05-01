@@ -1,20 +1,41 @@
 :root {
-  font-size: 24px;
-  font-family: "Roboto", sans-serif;
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
+	font-size: 24px;
+	font-family: "Roboto", sans-serif;
 
-  /* #region Scrollbar Firefox */
-  scrollbar-color: #6649b8 #1e1e24;
-  scrollbar-width: thin;
-  /* #endregion */
+	/* Variables */
+	--blue: #007bff;
+	--indigo: #6610f2;
+	--purple: #6f42c1;
+	--pink: #e83e8c;
+	--red: #dc3545;
+	--orange: #fd7e14;
+	--yellow: #ffc107;
+	--green: #28a745;
+	--teal: #20c997;
+	--cyan: #17a2b8;
+	--white: #fff;
+	--light-gray: #d3d3d3;
+	--gray: #6c757d;
+	--gray-dark: #343a40;
+	--gray-darker: #242937;
+	--primary: #105fbd;
+	--secondary: #7bb6da;
+	--success: #17ad56;
+	--info: #9296a2;
+	--warning: #eec643;
+	--danger: #fb271f;
+	--light: #fafafa;
+	--dark: #64799c;
+
+	/* #region Scrollbar Firefox */
+	scrollbar-color: var(--purple) var(--gray-dark);
+	scrollbar-width: thin;
+	/* #endregion */
 }
 
 body {
-  color: black;
-  background-color: darkgray;
+  color: var(--light-gray);
+  background-color: var(--gray-darker);
   margin: 0;
   padding: 0;
 }
@@ -25,11 +46,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: var(--gray-dark);
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: var(--purple);
 }
 /* #endregion */
 
@@ -40,13 +61,18 @@ main {
 
 /* #region Navbar */
 .navbar {
-  width: 5rem;
+  width: 4rem;
   height: 100vh;
   position: fixed;
-  background-color: var(--bg-primary);
+  background-color: #2b303e;
   
   transition: width 200ms ease;
   white-space: nowrap;
+
+	overflow: hidden;
+
+	z-index: 201;
+	border-right: #1d212b 3px solid;
 }
 
 .navbar-list {
@@ -69,18 +95,18 @@ main {
   height: 3rem;
   color: var(--text-primary);
   text-decoration: none;
-  transition: color 100ms ease;
+	transition-duration: 1s;
 }
 
 .navbar-item-text {
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition-duration: 200ms;
 }
 
 .navbar-item-icon {
   width: 2.5rem;
   height: 2.5rem;
-  margin: 0 1rem;
+	margin: 0 0.70rem;
 }
 
 .navbar:hover {
@@ -92,6 +118,20 @@ main {
 }
 
 .navbar-item:hover .navbar-item-text {
-  color: var(--text-secondary)
+  color: var(--white);
 }
+
+#overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0);
+	pointer-events: none;
+	transition-duration: 0.5s;
+
+	z-index: 200;
+}
+
 /* #endregion */
