@@ -54,84 +54,89 @@ body::-webkit-scrollbar-thumb {
 }
 /* #endregion */
 
-main {
+#content {
   margin-left: 5rem;
   padding: 1rem;
 }
 
 /* #region Navbar */
-.navbar {
-  width: 4rem;
-  height: 100vh;
-  position: fixed;
-  background-color: #2b303e;
-  
-  transition: width 200ms ease;
-  white-space: nowrap;
-
-	overflow: hidden;
-
-	z-index: 201;
-	border-right: #1d212b 3px solid;
-}
-
-.navbar-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.navbar-item {
-  width: 100%;
-}
-
-.navbar-item-link {
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  color: var(--text-primary);
-  text-decoration: none;
-	transition-duration: 1s;
-}
-
-.navbar-item-text {
-  opacity: 0;
-  transition-duration: 200ms;
-}
-
-.navbar-item-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-	margin: 0 0.70rem;
-}
-
-.navbar:hover {
-  width: 14rem;
-}
-
-.navbar:hover .navbar-item-text {
-  opacity: 100;
-}
-
-.navbar-item:hover .navbar-item-text {
-  color: var(--white);
-}
-
-#overlay {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0);
-	pointer-events: none;
-	transition-duration: 0.5s;
-
-	z-index: 200;
-}
 
 /* #endregion */
+
+/* #region Switch */
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: var(--red);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+	border-radius: 34px;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+	border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--green);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+/* #endregion */
+
+.section {
+	display: block;
+}
+
+.toggle-parent {
+	display: inline-block;
+}
+
+.toggle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+	width: max-content;
+	padding: 0.25rem;
+	
+
+	border: 2px var(--gray-dark) solid;
+	border-radius: 10px;
+	
+	margin-right: 1rem;
+}
+
+.toggle > span {
+	margin: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+.toggle .switch {
+	margin-left: 1rem;
+}
