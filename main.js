@@ -3,6 +3,12 @@ const log = "( ͡° ͜ʖ ͡°)";
 let page = "";
 
 $(() => {
+	if($(location).attr('href').includes("#")) {
+		loadPage($(location).attr('href').split("#")[1]);
+	} else {
+		loadPage("home");
+	}
+
 	$("body").on('mouseenter', ".navbar", (e) => {
 		$("#overlay").css("background-color", "rgba(0, 0, 0, 0.5)");
 	});
@@ -15,8 +21,6 @@ $(() => {
 		const classes = $(e.target).parent()[0].classList;
 		loadPage(classes[classes.length - 1].split("navbar-item-")[1]);
 	});
-
-	loadPage("home");
 });
 
 function loadPage(name) {

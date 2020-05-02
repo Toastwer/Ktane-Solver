@@ -29,6 +29,7 @@
 	--light: #fafafa;
 	--dark: #64799c;
 	--tinted-gray: #7c92a5;
+	--black: black;
 	/* #endregion */
 
 	/* #region Scrollbar Firefox */
@@ -198,3 +199,62 @@ input:checked + .slider:before {
 	padding: 0 0.3rem;
 }
 /* #endregion */
+
+/* #region Buttons */
+.button-hollow {
+	font-size: 1rem;
+	padding: 0.1rem 0;
+	background-color: var(--gray-darker);
+	color: white;
+	border: 3px solid white;
+	border-style: solid;
+	border-radius: 0.6rem;
+}
+
+.button-hollow:hover {
+
+}
+
+.button-hollow-active {
+	font-size: 1rem;
+	padding: 0.1rem 0;
+	background-color: var(--gray-darker);
+	color: black;
+}
+
+.button-hollow.red {
+	border: 3px solid var(--red);
+}
+
+.button-hollow.blue {
+	border: 3px solid var(--blue);
+}
+
+.button-hollow.yellow {
+	border: 3px solid var(--yellow);
+}
+
+.button-hollow.black {
+	border: 3px solid var(--black);
+}
+/* #endregion */
+
+.vw-5 {
+	width: 5rem;
+}
+
+.vw-4 {
+	width: 4rem;
+}
+
+.vw-3 {
+	width: 3rem;
+}
+
+.vw-2 {
+	width: 2rem;
+}
+
+.vw-1 {
+	width: 1rem;
+}
