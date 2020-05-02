@@ -1,4 +1,4 @@
-<h1>Please input stuff:</h1>
+<h1 class="title">Please input stuff:</h1>
 
 <div class="container">
 	<div class="section">
@@ -28,9 +28,23 @@
 		<p class="title">Number of batteries:</p>
 
 		<div class="integer-input">
-			<button>-</button>
+			<img class="minus" src="/icons/minus.png"></img>
 			<p class="number">0</p>
-			<button>+</button>
+			<img class="plus" src="/icons/plus.png"></img>
+		</div>
+	</div>
+
+	<div class="section">
+		<p class="title">Has the following ports:</p>
+
+		<div class="toggle-parent">
+			<div class="toggle">
+				<span class="text">Parallel</span>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider"></span>
+				</label>
+			</div>
 		</div>
 	</div>
 </div>

@@ -21,16 +21,20 @@
 	list-style: none;
 	padding-left: 20px;
 	width: 100%;
+	
 }
 
 .navbar-item a {
 	text-decoration: none;
-	color: var(--light-gray);
+	color: var(--tinted-gray);
 	width: max-content;
+	transition: 100ms;
 
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	
+	white-space: nowrap;
 }
 
 .navbar-item a::before {
@@ -42,11 +46,24 @@
 
 	background-image: url("/icons/null.png");
 	background-size: cover;
+	filter: grayscale();
+}
+
+.navbar-item a:hover::before {
+	filter: none;
 }
 
 .navbar:hover {
 	width: 300px;
 	padding-right: 20px;
+}
+
+.navbar:hover a {
+	width: calc(100vw - 50px);
+}
+
+.navbar-item a:hover {
+	color: var(--white);
 }
 
 
