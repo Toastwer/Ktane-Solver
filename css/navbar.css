@@ -9,6 +9,7 @@
 	overflow: hidden;
 	transition-duration: 0.1s;
 	width: 93px;
+	
 }
 
 .navbar {
@@ -35,6 +36,7 @@
 	align-items: center;
 	
 	white-space: nowrap;
+	cursor: pointer;
 }
 
 .navbar-item a::before {

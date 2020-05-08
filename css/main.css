@@ -3,6 +3,7 @@
 	font-family: "Roboto", sans-serif;
 
 	/* #region Variables */
+	--light-blue: #54a4fa;
 	--blue: #007bff;
 	--indigo: #6610f2;
 	--purple: #6f42c1;
@@ -10,6 +11,7 @@
 	--light-red: #f04859;
 	--red: #dc3545;
 	--orange: #fd7e14;
+	--light-yellow: #ffd24b;
 	--yellow: #ffc107;
 	--light-green: #3de664;
 	--green: #28a745;
@@ -30,6 +32,7 @@
 	--dark: #64799c;
 	--tinted-gray: #7c92a5;
 	--black: black;
+	--less-black: rgb(14, 14, 14);
 	/* #endregion */
 
 	/* #region Scrollbar Firefox */
@@ -166,7 +169,6 @@ input:checked + .slider:before {
 	align-items: center;
 	font-size: 1.2rem;
 	font-family: "Roboto Mono", monospace;
-	background-color: white;
 	width: max-content;
 	border-radius: 15px;
 	background-color: var(--light-gray);
@@ -201,42 +203,90 @@ input:checked + .slider:before {
 /* #endregion */
 
 /* #region Buttons */
-.button-hollow {
+.button-hollow, .button-hollow.white {
 	font-size: 1rem;
-	padding: 0.1rem 0;
+	padding: 4px 0;
 	background-color: var(--gray-darker);
-	color: white;
-	border: 3px solid white;
-	border-style: solid;
-	border-radius: 0.6rem;
-}
+	color: var(--white);
+	border: 3px solid var(--white);
+	border-radius: 20px;
+	transition-duration: 0.1s;
 
-.button-hollow:hover {
+	width: 100px;
 
-}
-
-.button-hollow-active {
-	font-size: 1rem;
-	padding: 0.1rem 0;
-	background-color: var(--gray-darker);
-	color: black;
+	cursor: pointer;
 }
 
 .button-hollow.red {
-	border: 3px solid var(--red);
+	border-color: var(--red);
 }
 
 .button-hollow.blue {
-	border: 3px solid var(--blue);
+	border-color: var(--blue);
 }
 
 .button-hollow.yellow {
-	border: 3px solid var(--yellow);
+	border-color: var(--yellow);
 }
 
 .button-hollow.black {
-	border: 3px solid var(--black);
+	border-color: var(--black);
 }
+
+.button-hollow:hover {
+	border-radius: 10px;
+}
+
+.button-hollow:hover.red {
+	background-color: var(--red);
+}
+
+.button-hollow:hover.blue {
+	background-color: var(--blue);
+}
+
+.button-hollow:hover.yellow {
+	background-color: var(--yellow);
+}
+
+.button-hollow:hover.black {
+	background-color: var(--black);
+}
+
+.button-hollow:hover.white {
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.button-hollow.active {
+	border-radius: 10px;
+}
+
+.button-hollow.red.active {
+	background-color: var(--red);
+}
+
+.button-hollow.blue.active {
+	background-color: var(--blue);
+}
+
+.button-hollow.yellow.active {
+	background-color: var(--yellow);
+}
+
+.button-hollow.black.active {
+	background-color: var(--black);
+}
+
+.button-hollow.white.active {
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.button-hollow.active:hover {
+	border-radius: 20px;
+}
+
 /* #endregion */
 
 .vw-5 {
@@ -257,4 +307,19 @@ input:checked + .slider:before {
 
 .vw-1 {
 	width: 1rem;
+}
+
+.wire {
+	display: inline-block;
+	border: 2px solid var(--gray-dark);
+	border-radius: 15px;
+	width: max-content;
+	padding-left: 13px;
+	padding-right: 13px;
+	margin-bottom: 10px;
+}
+
+.wire p {
+	display: inline-block;
+	margin-right: 10px;
 }
