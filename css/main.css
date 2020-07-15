@@ -102,6 +102,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .text-input input {
+	font-family: "Roboto Mono", "Roboto", sans-serif;
+
 	background-color: var(--gray-darker);
 	color: var(--white);
 
@@ -116,6 +118,13 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	
 	font-size: 0.9rem;
+}
+
+.text-input input::placeholder {
+	font-family: "Roboto", sans-serif;
+	font-style: italic;
+	color: var(--light-gray);
+	font-size: 0.8rem;
 }
 /* #endregion */
 

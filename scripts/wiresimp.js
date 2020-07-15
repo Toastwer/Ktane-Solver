@@ -6,8 +6,19 @@ $(() => {
 });
 
 function reloadPage() {
+    $("#serial-input").val(serial.input);
     updateWireInputs();
 }
+
+$("body").on("input", "#serial-input", () => {
+    const input = $("#serial-input").val().toUpperCase();
+    $("#serial-input").val(input);
+    serial = { 
+        input: input,
+        vowel: /[aeiou]/.test(input),
+        lastOdd: input.charAt(input.length - 1) % 2 === 1
+    }
+});
 
 $("body").on("click", "#wires-input .minus", () => {
     if(wires <= 3)

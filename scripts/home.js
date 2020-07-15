@@ -9,10 +9,16 @@ $(() => {
     setPorts();
 });
 
+function reloadPage() {
+    $("#serial-input").val(serial.input);
+}
+
 //#region Serial Number
-$("body").on("change", "#serial-input", () => {
-    const input = $("#serial-input").val();
+$("body").on("input", "#serial-input", () => {
+    const input = $("#serial-input").val().toUpperCase();
+    $("#serial-input").val(input);
     serial = { 
+        input: input,
         vowel: /[aeiou]/.test(input),
         lastOdd: input.charAt(input.length - 1) % 2 === 1
     }
