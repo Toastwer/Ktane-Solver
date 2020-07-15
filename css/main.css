@@ -274,6 +274,10 @@ input:checked + .slider:before {
 	cursor: pointer;
 }
 
+.button-hollow.s2 {
+	width: 125px;
+}
+
 .button-hollow.red {
 	border-color: var(--red);
 }
@@ -284,6 +288,10 @@ input:checked + .slider:before {
 
 .button-hollow.yellow {
 	border-color: var(--yellow);
+}
+
+.button-hollow.gray {
+	border-color: var(--gray);
 }
 
 .button-hollow.black {
@@ -329,6 +337,10 @@ input:checked + .slider:before {
 
 .button-hollow.yellow.active {
 	background-color: var(--yellow);
+}
+
+.button-hollow.gray.active {
+	background-color: var(--gray);
 }
 
 .button-hollow.black.active {
