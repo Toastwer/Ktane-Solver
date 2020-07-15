@@ -2,6 +2,13 @@ const log = "( ͡° ͜ʖ ͡°)";
 
 let page = "";
 
+let indicators = new Object();
+let ports = new Object(); 
+let serial = new Object();
+let batteries = 0;
+
+let loadedFiles = [];
+
 $(() => {
 	if($(location).attr('href').includes("#")) {
 		loadPage($(location).attr('href').split("#")[1]);
@@ -26,7 +33,15 @@ $(() => {
 function loadPage(name) {
 	page = name;
 	$.get("/pages/" + name + ".html", (data) => {
+		if(loadedFiles.includes(page))
+			data = data.split("<!-- scripts -->")[0];
+		else
+			loadedFiles.push(page);
+		
 		$("#content").html(data);
+		
+		if(typeof reloadPage === "function")
+			reloadPage();
 	}).fail((data) => {
 		console.log(data);
 		if (data.status == 404)

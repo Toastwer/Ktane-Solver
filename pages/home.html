@@ -1,4 +1,4 @@
-<h1 class="title">Please input stuff:</h1>
+<h1 class="title">Start variables:</h1>
 
 <div class="container">
 	<div class="section">
@@ -8,7 +8,7 @@
 			<div class="toggle">
 				<span class="text">CAR</span>
 				<label class="switch">
-					<input type="checkbox">
+					<input type="checkbox" id="car-input">
 					<span class="slider"></span>
 				</label>
 			</div>
@@ -17,7 +17,7 @@
 			<div class="toggle">
 				<span class="text">FRK</span>
 				<label class="switch">
-					<input type="checkbox">
+					<input type="checkbox" id="frk-input">
 					<span class="slider"></span>
 				</label>
 			</div>
@@ -27,7 +27,7 @@
 	<div class="section">
 		<p class="title">Number of batteries:</p>
 
-		<div class="integer-input">
+		<div class="integer-input" id="batteries-input">
 			<img class="minus" src="/icons/minus.png"></img>
 			<p class="number">0</p>
 			<img class="plus" src="/icons/plus.png"></img>
@@ -41,43 +41,21 @@
 			<div class="toggle">
 				<span class="text">Parallel</span>
 				<label class="switch">
-					<input type="checkbox">
+					<input type="checkbox" id="parallel-input">
 					<span class="slider"></span>
 				</label>
 			</div>
 		</div>
 	</div>
+
+	<div class="section">
+		<p class="title">Serial Number:</p>
+
+		<div class="text-input">
+			<input type="text" placeholder="Serial number..." id="serial-input">
+		</div>
+	</div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- scripts -->
+<script src="/scripts/home.js"></script>

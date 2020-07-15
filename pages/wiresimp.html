@@ -4,9 +4,9 @@
 	<div class="section">
 		<p class="title">Amount of wires:</p>
 
-		<div class="integer-input">
+		<div class="integer-input" id="wires-input">
 			<img class="minus" src="/icons/minus.png"></img>
-			<p class="number">0</p>
+			<p class="number">1</p>
 			<img class="plus" src="/icons/plus.png"></img>
 		</div>
 	</div>
@@ -14,60 +14,17 @@
 	<div class="section">
 		<p class="title">Wires:</p>
 
-		<div class="wire" id="wire1">
-			<p class="text">Wire 1: </p>
-			<button class="button-hollow red" id="wire1-red">Red</button>
-			<button class="button-hollow blue" id="wire1-blue">Blue</button>
-			<button class="button-hollow yellow" id="wire1-yellow">Yellow</button>
-			<button class="button-hollow black" id="wire1-black">Black</button>
-			<button class="button-hollow white" id="wire1-white">White</button>
-		</div>
-		<div class="wire" id="wire2">
-			<p class="text">Wire 2: </p>
-			<button class="button-hollow red" id="wire2-red">Red</button>
-			<button class="button-hollow blue" id="wire2-blue">Blue</button>
-			<button class="button-hollow yellow" id="wire2-yellow">Yellow</button>
-			<button class="button-hollow black" id="wire2-black">Black</button>
-			<button class="button-hollow white" id="wire2-white">White</button>
-		</div>
-		<div class="wire" id="wire3">
-			<p class="text">Wire 3: </p>
-			<button class="button-hollow red" id="wire3-red">Red</button>
-			<button class="button-hollow blue" id="wire3-blue">Blue</button>
-			<button class="button-hollow yellow" id="wire3-yellow">Yellow</button>
-			<button class="button-hollow black" id="wire3-black">Black</button>
-			<button class="button-hollow white" id="wire3-white">White</button>
-		</div>
-
-		<div class="wire" id="wire4">
-			<p class="text">Wire 4: </p>
-			<button class="button-hollow red" id="wire4-red">Red</button>
-			<button class="button-hollow blue" id="wire4-blue">Blue</button>
-			<button class="button-hollow yellow" id="wire4-yellow">Yellow</button>
-			<button class="button-hollow black" id="wire4-black">Black</button>
-			<button class="button-hollow white" id="wire4-white">White</button>
-		</div>
-		<div class="wire" id="wire5">
-			<p class="text">Wire 5: </p>
-			<button class="button-hollow red" id="wire5-red">Red</button>
-			<button class="button-hollow blue" id="wire5-blue">Blue</button>
-			<button class="button-hollow yellow" id="wire5-yellow">Yellow</button>
-			<button class="button-hollow black" id="wire5-black">Black</button>
-			<button class="button-hollow white" id="wire5-white">White</button>
-		</div>
-		<div class="wire" id="wire6">
-			<p class="text">Wire 6: </p>
-			<button class="button-hollow red" id="wire6-red">Red</button>
-			<button class="button-hollow blue" id="wire6-blue">Blue</button>
-			<button class="button-hollow yellow" id="wire6-yellow">Yellow</button>
-			<button class="button-hollow black" id="wire6-black">Black</button>
-			<button class="button-hollow white" id="wire6-white">White</button>
+		<div class="wire-container">
 		</div>
 	</div>
 
 	<div class="section">
 		<p class="title">Result:</p>
 
-		<p class="output">...</p>
+		<p class="output" id="outText">...</p>
 	</div>
 </div>
+
+<link rel="stylesheet" href="css/wiresimp.css">
+<!-- scripts -->
+<script src="/scripts/wiresimp.js"></script>

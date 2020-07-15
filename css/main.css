@@ -85,6 +85,40 @@ body::-webkit-scrollbar-thumb {
 	margin: 1rem 0;
 }
 
+.footer .title {
+	font-weight: bold;
+	margin: 12px 0;
+}
+
+.footer .subtitle {
+	font-weight: normal;
+	font-size: 0.8rem;
+	margin: 12px 0;
+}
+
+/* #region Text Input */
+.text-input {
+	display: inline-block;
+}
+
+.text-input input {
+	background-color: var(--gray-darker);
+	color: var(--white);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+	padding: 0.3rem 0.4rem;
+	width: 6.25rem;
+
+	border: 2px var(--gray-dark) solid;
+	border-radius: 10px;
+	
+	font-size: 0.9rem;
+}
+/* #endregion */
+
 /* #region Toggle */
 .toggle-parent {
 	display: inline-block;
@@ -171,9 +205,7 @@ input:checked + .slider:before {
 	font-family: "Roboto Mono", monospace;
 	width: max-content;
 	border-radius: 15px;
-	background-color: var(--light-gray);
-
-	color: var(--gray-darker);
+	border: 2px var(--gray-dark) solid;
 }
 
 .integer-input > .minus, .integer-input > .plus {
@@ -185,20 +217,34 @@ input:checked + .slider:before {
 	padding: 0.3rem 0.3rem;
 	cursor: pointer;
 	font-weight: bold;
-}
 
-.integer-input > .plus {
-	background-color: var(--light-green);
+	transition-duration: 100ms;
 }
 
 .integer-input > .minus {
-	background-color: var(--light-red);
-	width: 0.9rem;
+	width: 0.7rem;
+	height: 0.9rem;
+}
+
+.integer-input > .plus {
+	width: 0.8rem;
+	height: 0.8rem;
+}
+
+.integer-input > .plus:hover {
+	filter: invert(46%) sepia(54%) saturate(1789%) hue-rotate(85deg) brightness(107%) contrast(119%);
+}
+
+.integer-input > .minus:hover {
+	filter: invert(31%) sepia(73%) saturate(6833%) hue-rotate(341deg) brightness(90%) contrast(166%);
 }
 
 .integer-input > .number {
 	margin: 0;
 	padding: 0 0.3rem;
+	color: var(--light-gray);
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 /* #endregion */
 
@@ -287,39 +333,13 @@ input:checked + .slider:before {
 	border-radius: 20px;
 }
 
+.vw-5 { width: 5rem; }
+
+.vw-4 { width: 4rem; }
+
+.vw-3 { width: 3rem; }
+
+.vw-2 { width: 2rem; }
+
+.vw-1 { width: 1rem; }
 /* #endregion */
-
-.vw-5 {
-	width: 5rem;
-}
-
-.vw-4 {
-	width: 4rem;
-}
-
-.vw-3 {
-	width: 3rem;
-}
-
-.vw-2 {
-	width: 2rem;
-}
-
-.vw-1 {
-	width: 1rem;
-}
-
-.wire {
-	display: inline-block;
-	border: 2px solid var(--gray-dark);
-	border-radius: 15px;
-	width: max-content;
-	padding-left: 13px;
-	padding-right: 13px;
-	margin-bottom: 10px;
-}
-
-.wire p {
-	display: inline-block;
-	margin-right: 10px;
-}
