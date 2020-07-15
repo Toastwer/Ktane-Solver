@@ -226,10 +226,13 @@ input:checked + .slider:before {
 	height: 1rem;
 	margin: 0;
 	padding: 0.3rem 0.3rem;
-	cursor: pointer;
 	font-weight: bold;
 
 	transition-duration: 100ms;
+}
+
+.integer-input > .minus:not(.disabled), .integer-input > .plus:not(.disabled) {
+	cursor: pointer;
 }
 
 .integer-input > .minus {
@@ -242,11 +245,15 @@ input:checked + .slider:before {
 	height: 0.8rem;
 }
 
-.integer-input > .plus:hover {
+.integer-input .disabled {
+	filter: brightness(50%);
+}
+
+.integer-input > .plus:not(.disabled):hover  {
 	filter: invert(46%) sepia(54%) saturate(1789%) hue-rotate(85deg) brightness(107%) contrast(119%);
 }
 
-.integer-input > .minus:hover {
+.integer-input > .minus:not(.disabled):hover {
 	filter: invert(31%) sepia(73%) saturate(6833%) hue-rotate(341deg) brightness(90%) contrast(166%);
 }
 

@@ -7,10 +7,12 @@ $(() => {
     $("#batteries-input .number").html(batteries);
     setIndicators();
     setPorts();
+    validateInputs();
 });
 
 function reloadPage() {
     $("#serial-input").val(serial.input);
+    validateInputs();
 }
 
 //#region Serial Number
@@ -50,12 +52,24 @@ $("body").on("click", "#batteries-input .minus", () => {
 
     batteries--;
     $("#batteries-input .number").html(batteries);
+    
+    validateInputs();
 });
 
 $("body").on("click", "#batteries-input .plus", () => {
     batteries++;
     $("#batteries-input .number").html(batteries);
+
+    validateInputs();
 });
+
+function validateInputs() {
+    if(batteries <= 0) {
+        $("#batteries-input .minus").addClass("disabled");
+    } else {
+        $("#batteries-input .minus").removeClass("disabled");
+    }
+}
 //#endregion
 
 //#region Ports

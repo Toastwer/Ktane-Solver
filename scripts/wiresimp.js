@@ -3,11 +3,13 @@ let data = [];
 
 $(() => {
     updateWireInputs();
+    validateInputs();
 });
 
 function reloadPage() {
     $("#serial-input").val(serial.input);
     updateWireInputs();
+    validateInputs();
 }
 
 $("body").on("input", "#serial-input", () => {
@@ -24,8 +26,9 @@ $("body").on("click", "#wires-input .minus", () => {
     if(wires <= 3)
         return;
 
-        wires--;
+    wires--;
     $("#wires-input .number").html(wires);
+    validateInputs();
     updateWireInputs();
 });
 
@@ -35,8 +38,19 @@ $("body").on("click", "#wires-input .plus", () => {
 
     wires++;
     $("#wires-input .number").html(wires);
+    validateInputs();
     updateWireInputs();
 });
+
+function validateInputs() {
+    if(wires <= 3) {
+        $("#wires-input .minus").addClass("disabled");
+        $("#wires-input .plus").removeClass("disabled");
+    } else if(wires >= 6) {
+        $("#wires-input .plus").addClass("disabled");
+        $("#wires-input .minus").removeClass("disabled");
+    }
+}
 
 $("body").on("click", ".wire-container .wire button", (obj) => {
     const id = obj.target.id;

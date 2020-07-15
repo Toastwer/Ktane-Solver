@@ -33,10 +33,26 @@ $(() => {
 function loadPage(name) {
 	page = name;
 	$.get("/pages/" + name + ".html", (data) => {
-		if(loadedFiles.includes(page))
+		if(loadedFiles.includes(page)) {
 			data = data.split("<!-- scripts -->")[0];
-		else
+		}
+		else {
+			if(loadedFiles.length > 0) {
+				const arr = data.split("\n");
+				for(let i = arr.length - 1; i > 0; i--) {
+					if(arr[i] !== "") {
+						if(arr[i].includes("redirect")) {
+							arr.splice(i, 1);
+							data = arr.join("\n");
+						} else {
+							break;
+						}
+					}
+				}
+			}
+
 			loadedFiles.push(page);
+		}
 		
 		$("#content").html(data);
 		
