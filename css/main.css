@@ -42,10 +42,10 @@
 }
 
 body {
-  color: var(--light-gray);
-  background-color: var(--gray-darker);
-  margin: 0;
-  padding: 0;
+	color: var(--light-gray);
+	background-color: var(--gray-darker);
+	margin: 0;
+	padding: 0;
 }
 
 /* #region Scrollbar Chrome */
@@ -63,8 +63,8 @@ body::-webkit-scrollbar-thumb {
 /* #endregion */
 
 #content {
-  margin-left: 5rem;
-  padding: 1rem;
+	margin-left: 5rem;
+	padding: 1rem;
 }
 
 .section {
@@ -75,14 +75,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0%;
 	width: calc(100vw - 7rem);
 
 	display: block;
 	border-top: 3px var(--gray) solid;
 	border-radius: 2px;
-	margin: 1rem 0;
+	padding: 0.25rem 0 1rem 0;
+
+	background-color: var(--gray-darker);
 }
 
 .footer .title {

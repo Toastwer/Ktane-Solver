@@ -40,6 +40,8 @@ function loadPage(name) {
 		
 		$("#content").html(data);
 		
+		$("#content").css("margin-bottom", $(".footer").height())
+
 		if(typeof reloadPage === "function")
 			reloadPage();
 	}).fail((data) => {
