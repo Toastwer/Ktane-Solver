@@ -1,59 +1,108 @@
-<h1 class="title">Button</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
 
-<div class="container">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
 
-    <div class="section">
-		<p class="title">Color of the button:</p>
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/navbar.css">
 
-		<div class="color-input">
-			<button class="button-hollow red">Red</button>
-            <button class="button-hollow blue">Blue</button>
-            <button class="button-hollow yellow">Yellow</button>
-            <button class="button-hollow white">White</button>
-		</div>
-    </div>
-    
-    <div class="section">
-		<p class="title">Text on the button:</p>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/main.js"></script>
 
-		<div class="text-input">
-            <button class="button-hollow s2 gray" id="">Abort</button>
-            <button class="button-hollow s2 gray" id="">Detonate</button>
-            <button class="button-hollow s2 gray" id="">Hold</button>
-            <button class="button-hollow s2 gray" id="">Press</button>
-		</div>
-	</div>
+    <title>Ktane Solver</title>
+  </head>
+  <body>
+    <div id="overlay"></div>
 
-    <div class="footer">
-        <p class="title">Relevant to this puzzle:</p>
-        <p class="subtitle">Indicators:</p>
-        <div class="toggle-parent">
-            <div class="toggle">
-                <span class="text">CAR</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
-            </div>
-        </div>
+    <ul class="navbar"></ul>
         
-        <div class="toggle-parent">
-            <div class="toggle">
-                <span class="text">FRK</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
+    <div id="content">
+        <h1 class="title">Button</h1>
+
+        <div class="container">
+
+            <div class="section">
+                <p class="title">Color of the button:</p>
+
+                <div class="color-input">
+                    <button class="button-hollow red">Red</button>
+                    <button class="button-hollow blue">Blue</button>
+                    <button class="button-hollow yellow">Yellow</button>
+                    <button class="button-hollow white">White</button>
+                </div>
+            </div>
+            
+            <div class="section">
+                <p class="title">Text on the button:</p>
+
+                <div class="text-input">
+                    <button class="button-hollow s2 gray" id="abort">Abort</button>
+                    <button class="button-hollow s2 gray" id="detonate">Detonate</button>
+                    <button class="button-hollow s2 gray" id="hold">Hold</button>
+                    <button class="button-hollow s2 gray" id="press">Press</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="title" id="outTitle1">Result:</p>
+        
+                <p class="output" id="outText1">...</p>
+            </div>
+
+            <div class="section" id="color-section">
+                <p class="title">Color of the strip:</p>
+
+                <div class="strip-input">
+                    <button class="button-hollow blue">Blue</button>
+                    <button class="button-hollow yellow">Yellow</button>
+                    <button class="button-hollow gray">Other</button>
+                </div>
+            </div>
+
+            <div class="section" id="result2-section"">
+                <p class="title">Step two:</p>
+        
+                <p class="output" id="outText2">...</p>
+            </div>
+
+            <div class="footer">
+                <p class="title">Relevant to this puzzle:</p>
+                <div class="footer-section">
+                    <p class="subtitle">Indicators:</p>
+                    <div class="toggle-parent">
+                        <div class="toggle">
+                            <span class="text">CAR</span>
+                            <label class="switch">
+                                <input type="checkbox" id="car-input">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="toggle-parent">
+                        <div class="toggle">
+                            <span class="text">FRK</span>
+                            <label class="switch">
+                                <input type="checkbox" id="frk-input">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <p class="subtitle">Number of batteries:</p>
+                    <div class="integer-input" id="batteries-input">
+                        <img class="minus" src="/icons/minus.png"></img>
+                        <p class="number">0</p>
+                        <img class="plus" src="/icons/plus.png"></img>
+                    </div>
+                </div>
             </div>
         </div>
-        <p class="subtitle">Number of batteries:</p>
-		<div class="integer-input">
-			<img class="minus" src="/icons/minus.png"></img>
-			<p class="number">0</p>
-			<img class="plus" src="/icons/plus.png"></img>
-		</div>
     </div>
-</div>
+  </body>
 
-<!-- scripts -->
-<script src="/scripts/redirect.js"></script>
+  <script src="/scripts/button.js"></script>
+</html>

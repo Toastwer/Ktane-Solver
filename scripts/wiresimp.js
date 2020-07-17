@@ -2,27 +2,22 @@ let wires = 3;
 let data = [];
 
 $(() => {
-    updateWireInputs();
-    validateInputs();
-});
-
-function reloadPage() {
     $("#serial-input").val(serial.input);
     updateWireInputs();
     validateInputs();
-}
+});
 
-$("body").on("input", "#serial-input", () => {
+$("body").on("input", ".wiresimp #serial-input", () => {
     const input = $("#serial-input").val().toUpperCase();
     $("#serial-input").val(input);
-    serial = { 
+    setSerial({ 
         input: input,
         vowel: /[aeiou]/.test(input),
         lastOdd: input.charAt(input.length - 1) % 2 === 1
-    }
+    });
 });
 
-$("body").on("click", "#wires-input .minus", () => {
+$("body").on("click", ".wiresimp #wires-input .minus", () => {
     if(wires <= 3)
         return;
 
@@ -32,7 +27,7 @@ $("body").on("click", "#wires-input .minus", () => {
     updateWireInputs();
 });
 
-$("body").on("click", "#wires-input .plus", () => {
+$("body").on("click", ".wiresimp #wires-input .plus", () => {
     if(wires >= 6)
         return;
 
@@ -52,8 +47,8 @@ function validateInputs() {
     }
 }
 
-$("body").on("click", ".wire-container .wire button", (obj) => {
-    const id = obj.target.id;
+$("body").on("click", ".wiresimp .wire-container .wire button", function() {
+    const id = $(this).attr("id");
     const wire = id.split("-")[0];
 
     if(data[wire] != null)

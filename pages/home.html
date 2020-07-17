@@ -1,62 +1,85 @@
-<h1 class="title">Start variables:</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
 
-<div class="container">
-	<div class="section">
-		<p class="title">Has the following indicators:</p>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
 
-		<div class="toggle-parent">
-			<div class="toggle">
-				<span class="text">CAR</span>
-				<label class="switch">
-					<input type="checkbox" id="car-input">
-					<span class="slider"></span>
-				</label>
-			</div>
-		</div>
-		<div class="toggle-parent">
-			<div class="toggle">
-				<span class="text">FRK</span>
-				<label class="switch">
-					<input type="checkbox" id="frk-input">
-					<span class="slider"></span>
-				</label>
-			</div>
-		</div>
-	</div>
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/navbar.css">
 
-	<div class="section">
-		<p class="title">Number of batteries:</p>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/main.js"></script>
 
-		<div class="integer-input" id="batteries-input">
-			<img class="minus" src="/icons/minus.png"></img>
-			<p class="number">0</p>
-			<img class="plus" src="/icons/plus.png"></img>
-		</div>
-	</div>
+    <title>Ktane Solver</title>
+</head>
 
-	<div class="section">
-		<p class="title">Has the following ports:</p>
+<body>
+    <div id="overlay"></div>
+    
+    <ul class="navbar"></ul>
+			
+    <div id="content">
+        <h1 class="title">Start variables:</h1>
 
-		<div class="toggle-parent">
-			<div class="toggle">
-				<span class="text">Parallel</span>
-				<label class="switch">
-					<input type="checkbox" id="parallel-input">
-					<span class="slider"></span>
-				</label>
-			</div>
-		</div>
-	</div>
+        <div class="container">
+            <div class="section">
+                <p class="title">Has the following indicators:</p>
 
-	<div class="section">
-		<p class="title">Serial Number:</p>
+                <div class="toggle-parent">
+                    <div class="toggle">
+                        <span class="text">CAR</span>
+                        <label class="switch">
+                            <input type="checkbox" id="car-input">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="toggle-parent">
+                    <div class="toggle">
+                        <span class="text">FRK</span>
+                        <label class="switch">
+                            <input type="checkbox" id="frk-input">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-		<div class="text-input">
-			<input type="text" placeholder="Serial Number..." id="serial-input">
-		</div>
-	</div>
-</div>
+            <div class="section">
+                <p class="title">Number of batteries:</p>
 
-<!-- scripts -->
-<script src="/scripts/home.js"></script>
-<script src="/scripts/redirect.js"></script>
+                <div class="integer-input" id="batteries-input">
+                    <img class="minus" src="/icons/minus.png"></img>
+                    <p class="number">0</p>
+                    <img class="plus" src="/icons/plus.png"></img>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="title">Has the following ports:</p>
+
+                <div class="toggle-parent">
+                    <div class="toggle">
+                        <span class="text">Parallel</span>
+                        <label class="switch">
+                            <input type="checkbox" id="parallel-input">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="title">Serial Number:</p>
+
+                <div class="text-input">
+                    <input type="text" placeholder="Serial Number..." id="serial-input">
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+
+  <script src="/scripts/home.js"></script>
+</html>
