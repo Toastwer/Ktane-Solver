@@ -117,13 +117,13 @@ function holdButton() {
 function stripResult() {
     switch(strip) {
         case "blue":
-            $("#outText2").html("Release when the timer has a <b>4</b> in any position");
+            $("#outText2").html("Release the button when the timer has a <b>4</b> in any position");
             break;
         case "yellow":
-            $("#outText2").html("Release when the timer has a <b>5</b> in any position");
+            $("#outText2").html("Release the button when the timer has a <b>5</b> in any position");
             break;
         default:
-            $("#outText2").html("Release when the timer has a <b>1</b> in any position");
+            $("#outText2").html("Release the button when the timer has a <b>1</b> in any position");
             break;
     }
 }

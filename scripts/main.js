@@ -12,7 +12,7 @@ $(() => {
                         <li class="navbar-item navbar-item-button">
                             <a>Button</a>
                         </li>
-                        <li class="navbar-item navbar-item-keypad">
+                        <li class="navbar-item navbar-item-keypads">
                             <a>Keypads</a>
                         </li>
                         <li class="navbar-item navbar-item-simon">

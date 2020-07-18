@@ -53,6 +53,10 @@ b {
 	font-weight: 700;
 }
 
+.red {
+	color: var(--red);
+}
+
 /* #region Scrollbar Chrome */
 body::-webkit-scrollbar {
   width: 0.25rem;

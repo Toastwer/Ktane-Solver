@@ -1,0 +1,31 @@
+.icons, .iconsOut {
+    display: inline-block;
+}
+
+.icons img, .iconsOut img:not(.arrow) {
+	border: 3px solid var(--gray-dark);
+    border-radius: 15px;
+    height: 115px;
+    margin: 0 15px 15px 0;
+    transition-duration: 100ms;
+}
+
+.icons img:hover {
+    border-color: var(--light-gray);
+    scale: 110%;
+    cursor: pointer;
+}
+
+.icons img.active {
+    border-color: var(--green);
+}
+
+.icons img.active:hover {
+    border-color: var(--light-green);
+}
+
+.arrow {
+    height: 45px;
+    margin-bottom: 55px;
+    margin-right: 15px;
+}

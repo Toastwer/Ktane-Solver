@@ -7,7 +7,7 @@
 	padding-top: 20px;
 
 	overflow: hidden;
-	transition-duration: 0.1s;
+	transition-duration: 100ms;
 	width: 93px;
 	
 }
@@ -49,6 +49,29 @@
 	background-image: url("/icons/null.png");
 	background-size: cover;
 	filter: grayscale();
+	
+	transition-duration: 150ms;
+}
+
+.navbar-item-home a::before {
+	background-image: url("/icons/home.png");
+	scale: 80%;
+	filter: brightness(0%);
+}
+
+.navbar-item-button a::before {
+	background-image: url("/icons/button.png");
+	scale: 80%;
+}
+
+.navbar-item-wiresimp a::before {
+	background-image: url("/icons/wiresimp.png");
+	scale: 80%;
+}
+
+.navbar-item-keypads a::before {
+	background-image: url("/icons/keypads.png");
+	scale: 80%;
 }
 
 .navbar-item a:hover::before {
