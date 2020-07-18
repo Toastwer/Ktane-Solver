@@ -2,6 +2,7 @@ let indicators = new Object();
 let ports = new Object(); 
 let serial = new Object();
 let batteries = 0;
+let strikes = 0;
 
 $(() => {
     $("#content").css("margin-bottom", $(".footer").height());
@@ -67,6 +68,9 @@ $(() => {
 
     const _batteries =  parseInt(sessionStorage.getItem("batteries"));
     if(!isNaN(_batteries)) batteries = _batteries;
+
+    const _strikes =  parseInt(sessionStorage.getItem("strikes"));
+    if(!isNaN(_strikes)) strikes = _strikes;
 });
 
 function addBattery() {
@@ -79,6 +83,18 @@ function removeBattery() {
     batteries--;
     sessionStorage.setItem("batteries", batteries);
     return batteries;
+}
+
+function addStrike() {
+    strikes++;
+    sessionStorage.setItem("strikes", strikes);
+    return strikes;
+}
+
+function removeStrike() {
+    strikes--;
+    sessionStorage.setItem("strikes", strikes);
+    return strikes;
 }
 
 function setIndicator(key, input) {

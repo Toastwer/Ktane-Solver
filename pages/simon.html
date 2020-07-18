@@ -23,10 +23,48 @@
         <h1 class="title">Simon Says</h1>
 
         <div class="container">
-            
+          <div class="section">
+            <p class="title">Color of the (new) flash:</p>
+
+            <div class="flash-input">
+              <button class="button-hollow red">Red</button>
+              <button class="button-hollow blue">Blue</button>
+              <button class="button-hollow green">Green</button>
+              <button class="button-hollow yellow">Yellow</button>
+            </div>
+          </div>
+
+          <div class="section">
+            <div>
+              <p class="title" id="outTitle" style="float: left">Button to press:</p>
+              <button class="button-filled red" id="resetButton" style="float: right; margin-top: 18px">Reset</button>
+            </div>
+
+            <p class="output" id="outText">...</p>
+          </div>
         </div>
+
+        <div class="footer">
+          <p class="title">Relevant to this puzzle:</p>
+          <div class="footer-section padding">
+            <p class="subtitle">Serial Number:</p>
+
+            <div class="text-input">
+              <input type="text" placeholder="Serial number..." id="serial-input">
+            </div>
+          </div>
+          <div class="footer-section">
+              <p class="subtitle">Amount of strikes:</p>
+
+              <div class="integer-input" id="strikes-input">
+                <img class="minus" src="/icons/minus.png"></img>
+                <p class="number">0</p>
+                <img class="plus" src="/icons/plus.png"></img>
+            </div>
+          </div>
+      </div>
     </div>
   </body>
 
-  <script src="/scripts/keypads.js"></script>
+  <script src="/scripts/simon.js"></script>
 </html>

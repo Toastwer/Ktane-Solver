@@ -7,7 +7,7 @@ $(() => {
     validateInputs();
 });
 
-$("body").on("input", ".wiresimp #serial-input", () => {
+$("body").on("input", "#serial-input", () => {
     const input = $("#serial-input").val().toUpperCase();
     $("#serial-input").val(input);
     setSerial({ 
@@ -17,7 +17,7 @@ $("body").on("input", ".wiresimp #serial-input", () => {
     });
 });
 
-$("body").on("click", ".wiresimp #wires-input .minus", () => {
+$("body").on("click", "#wires-input .minus", () => {
     if(wires <= 3)
         return;
 
@@ -27,7 +27,7 @@ $("body").on("click", ".wiresimp #wires-input .minus", () => {
     updateWireInputs();
 });
 
-$("body").on("click", ".wiresimp #wires-input .plus", () => {
+$("body").on("click", "#wires-input .plus", () => {
     if(wires >= 6)
         return;
 
@@ -47,7 +47,7 @@ function validateInputs() {
     }
 }
 
-$("body").on("click", ".wiresimp .wire-container .wire button", function() {
+$("body").on("click", ".wire-container .wire button", function() {
     const id = $(this).attr("id");
     const wire = id.split("-")[0];
 

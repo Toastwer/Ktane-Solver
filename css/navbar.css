@@ -48,7 +48,7 @@
 
 	background-image: url("/icons/null.png");
 	background-size: cover;
-	filter: grayscale();
+	filter: grayscale() brightness(75%);
 	
 	transition-duration: 150ms;
 }
@@ -71,6 +71,11 @@
 
 .navbar-item-keypads a::before {
 	background-image: url("/icons/keypads.png");
+	scale: 80%;
+}
+
+.navbar-item-simon a::before {
+	background-image: url("/icons/simon.png");
 	scale: 80%;
 }
 

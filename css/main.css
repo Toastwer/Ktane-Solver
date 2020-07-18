@@ -100,6 +100,10 @@ body::-webkit-scrollbar-thumb {
 	float: left;
 }
 
+.footer-section.padding {
+	padding-right: 1rem;
+}
+
 .footer-section:not(:nth-child(-n+2)) {
 	border-left: 3px var(--gray) solid;
 	border-radius: 2px;
@@ -324,6 +328,10 @@ input:checked + .slider:before {
 	border-color: var(--blue);
 }
 
+.button-hollow.green {
+	border-color: var(--green);
+}
+
 .button-hollow.yellow {
 	border-color: var(--yellow);
 }
@@ -346,6 +354,10 @@ input:checked + .slider:before {
 
 .button-hollow:hover.blue {
 	background-color: var(--blue);
+}
+
+.button-hollow:hover.green {
+	background-color: var(--green);
 }
 
 .button-hollow:hover.yellow {
@@ -373,6 +385,10 @@ input:checked + .slider:before {
 	background-color: var(--blue);
 }
 
+.button-hollow.green.active {
+	background-color: var(--green);
+}
+
 .button-hollow.yellow.active {
 	background-color: var(--yellow);
 }
@@ -394,6 +410,41 @@ input:checked + .slider:before {
 	border-radius: 20px;
 }
 
+
+
+.button-filled {
+	font-size: 1rem;
+	padding: 4px 0;
+	background-color: var(--gray-darker);
+	color: var(--white);
+	border: none;
+	border-radius: 20px;
+	transition-duration: 0.2s;
+	background-position: center;
+
+	width: 100px;
+
+	cursor: pointer;
+}
+
+.button-filled.red {
+	background-color: var(--red);
+	background-position: center;
+	transition: background 0.7s;
+}
+
+.button-filled:hover.red {
+	background: var(--light-red) radial-gradient(circle, transparent 1%, var(--light-red) 1%) center/15000%;
+}
+
+.button-filled:active.red {
+	background-color: var(--red);
+	background-size: 100%;
+	transition: background 0s;
+}
+
+
+
 .vw-5 { width: 5rem; }
 
 .vw-4 { width: 4rem; }
@@ -404,3 +455,30 @@ input:checked + .slider:before {
 
 .vw-1 { width: 1rem; }
 /* #endregion */
+
+.filled {
+	font-size: 1rem;
+	padding: 4px 0;
+	color: var(--white);
+	border: var(--black) solid;
+	border-radius: 20px;
+	transition-duration: 0.1s;
+
+	width: 100px;
+}
+
+.filled.red {
+	background-color: var(--red);
+}
+
+.filled.blue {
+	background-color: var(--blue);
+}
+
+.filled.green {
+	background-color: var(--green);
+}
+
+.filled.yellow {
+	background-color: var(--yellow);
+}
