@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/keypads.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/main.js"></script>
+
+    <title>Ktane Solver</title>
+  </head>
+  <body>
+    <div id="overlay"></div>
+
+    <ul class="navbar"></ul>
+        
+    <div id="content">
+        <h1 class="title">Who's on first</h1>
+
+        <div class="container">
+            <div class="section stage1">
+                <p class="title">Text on the display:</p>
+
+                <button class="dropdown-head placeholder">Select here...</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item">Item1</button>
+                    <button class="dropdown-item">Item2</button>
+                    <button class="dropdown-item">Item3</button>
+                </div>
+            </div>
+
+            <div class="section stage2">
+                <p class="title" id="stage2Title">Text on the ??? button:</p>
+
+                <button class="dropdown-head placeholder">Select here...</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item">Item1</button>
+                    <button class="dropdown-item">Item2</button>
+                    <button class="dropdown-item">Item3</button>
+                </div>
+            </div>
+
+            <div class="section stage3">
+                <p class="title">Press the first button that appears in this list:</p>
+        
+                <p class="output" id="outText">...</p>
+            </div>
+        </div>
+    </div>
+  </body>
+
+  <script src="/scripts/whoof.js"></script>
+</html>
