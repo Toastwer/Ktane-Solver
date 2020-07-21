@@ -89,6 +89,11 @@
 	scale: 80%;
 }
 
+.navbar-item-morse a::before {
+	background-image: url("/icons/morse.png");
+	scale: 80%;
+}
+
 .navbar-item a:hover::before {
 	filter: none;
 }
