@@ -9,7 +9,7 @@ const solutions = [
     ["six", "euro", "tracks", "ae", "pitchfork", "nwithhat", "omega"]];
 
 $(() => {
-    const _selectedKeys = JSON.parse(localStorage.getItem("selectedKeys"));
+    const _selectedKeys = JSON.parse(sessionStorage.getItem("selectedKeys"));
     if(_selectedKeys != null) {
         selectedKeys = [...new Set(_selectedKeys)];
         selectedKeys.forEach(selectedKey => {
@@ -27,7 +27,7 @@ $(".icons").on("click", "img", function() {
         selectedKeys.push($(this).attr("class"))
         $(this).addClass("active");
     }
-    localStorage.setItem("selectedKeys", JSON.stringify(selectedKeys));
+    sessionStorage.setItem("selectedKeys", JSON.stringify(selectedKeys));
 
     tryResult();
 });

@@ -174,39 +174,17 @@ function getPosOf(colors, color, pos) {
     return out;
 }
 
-function numToWord(num) {
-    switch (num) {
-        case 1:
-            return "first";
-        case 2:
-            return "second";
-        case 3:
-            return "third";
-        case 4:
-            return "fourth";
-        case 5:
-            return "fifth";
-        case 6:
-            return "sixth";
-    }
-}
-
 function setResult(text) {
     if(text == null)
         text = "...";
     else {
         let textArr = text.split("*");
         textArr.forEach((entry, index) => {
-            if(index < textArr.length - 1) {
-                if(index % 2 === 0) {
-                    textArr[index] = entry + "<b>";
-                } else {
-                    textArr[index]  = entry + "</b>";
-                }
-            }
+            if(index < textArr.length - 1)
+                textArr[index] = entry + (index % 2 === 0 ? "<b>" : "</b>");
         });
         text = textArr.join("");
     }
-
+    $('body,html').animate({scrollTop: $(".footer").height()}, 500); 
     $("#outText").html(text);
 }

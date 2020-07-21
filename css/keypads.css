@@ -8,6 +8,11 @@
     height: 115px;
     margin: 0 15px 15px 0;
     transition-duration: 100ms;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 .icons img:hover {

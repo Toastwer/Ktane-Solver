@@ -17,6 +17,11 @@ $("body").on("click", ".flash-input .button-hollow", function() {
     newColor(_color);
 });
 
+$("body").on("click", "#resetButton", function () {
+    colors = [[[]]];
+    update();
+});
+
 function newColor(color) {
     if(serial.vowel) {
         switch (color) {

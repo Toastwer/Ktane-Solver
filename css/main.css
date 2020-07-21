@@ -46,6 +46,7 @@ body {
 	background-color: var(--gray-darker);
 	margin: 0;
 	padding: 0;
+	user-select: none;
 }
 
 b {
@@ -74,6 +75,10 @@ body::-webkit-scrollbar-thumb {
 #content {
 	margin-left: 5rem;
 	padding: 1rem;
+}
+
+.dummy {
+	height: 15vh;
 }
 
 .section {
@@ -464,7 +469,7 @@ input:checked + .slider:before {
 	color: var(--white);
 	border: 3px solid var(--gray);
 	border-radius: 20px;
-	transition-duration: 0.1s;
+	transition-duration: 0.3s;
 	
 	width: 200px;
 
@@ -487,6 +492,8 @@ input:checked + .slider:before {
 	background-color: var(--gray-dark);
 
 	width: 50vw;
+
+	overflow: hidden;
 }
 
 @media (max-width: 1000px) {
