@@ -1,7 +1,10 @@
 let input = "";
 
 $(() => {
+    const _morse = sessionStorage.getItem("morse");
+    if(_morse != null) input = _morse;
     showInput();
+    calculateResult();
 });
 
 $("body").on("click", ".button-hollow, .button-filled", function() {
@@ -25,6 +28,8 @@ $("body").on("click", ".button-hollow, .button-filled", function() {
             input = "";
             break;
     }
+
+    sessionStorage.setItem("morse", input);
 
     showInput();
     calculateResult();
