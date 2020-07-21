@@ -448,6 +448,21 @@ input:checked + .slider:before {
 	transition: background 0s;
 }
 
+.button-filled.yellow {
+	background-color: var(--yellow);
+	background-position: center;
+	transition: background 0.7s;
+}
+
+.button-filled:hover.yellow {
+	background: var(--light-yellow) radial-gradient(circle, transparent 1%, var(--light-yellow) 1%) center/15000%;
+}
+
+.button-filled:active.yellow {
+	background-color: var(--yellow);
+	background-size: 100%;
+	transition: background 0s;
+}
 
 
 .vw-5 { width: 5rem; }

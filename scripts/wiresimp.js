@@ -2,10 +2,28 @@ let wires = 3;
 let data = [];
 
 $(() => {
+    const _wiresimp =  sessionStorage.getItem("wiresimp");
+    if(_wiresimp != null) {
+        data = JSON.parse(_wiresimp.split("-")[0]);
+        wires = parseInt(_wiresimp.split("-")[1]);
+
+        data.forEach((wire, index) => {
+            if(index > 0)
+                $(`#${wire.wire}-${wire.color}`);
+        });
+    } 
+
     $("#serial-input").val(serial.input);
+    $("#wires-input .number").html(wires);
     updateWireInputs();
     validateInputs();
+
+    tryResult();
 });
+
+function sessionStore() {
+    sessionStorage.setItem("wiresimp", JSON.stringify(data) + "-" + wires);
+}
 
 $("body").on("input", "#serial-input", () => {
     const input = $("#serial-input").val().toUpperCase();
@@ -25,6 +43,8 @@ $("body").on("click", "#wires-input .minus", () => {
     $("#wires-input .number").html(wires);
     validateInputs();
     updateWireInputs();
+
+    sessionStore();
 });
 
 $("body").on("click", "#wires-input .plus", () => {
@@ -35,6 +55,8 @@ $("body").on("click", "#wires-input .plus", () => {
     $("#wires-input .number").html(wires);
     validateInputs();
     updateWireInputs();
+
+    sessionStore();
 });
 
 function validateInputs() {
@@ -50,13 +72,18 @@ function validateInputs() {
 $("body").on("click", ".wire-container .wire button", function() {
     const id = $(this).attr("id");
     const wire = id.split("-")[0];
+    const wireInt = wire.charAt(wire.length - 1);
 
-    if(data[wire] != null)
-        $(`#${wire}-${data[wire].color}`).removeClass("active");
+    if(data[wireInt] != null)
+        $(`#${wire}-${data[wireInt].color}`).removeClass("active");
 
-    data[wire] = { color: id.split("-")[1] };
+    data[wireInt] = { 
+        color: id.split("-")[1], 
+        wire: wire
+    };
     $("#" + id).addClass("active");
 
+    sessionStore();
     tryResult();
 });
 
@@ -64,8 +91,8 @@ function updateWireInputs() {
     let text = "";
     for (let i = 1; i < wires + 1; i++) {
         let color = "";
-        if(data["wire" + i] != null)
-            color = data["wire" + i].color;
+        if(data[i] != null)
+            color = data[i].color;
 
         text += `<div class="wire">
                     <p class="text">Wire ${i}: </p>
@@ -83,15 +110,15 @@ function updateWireInputs() {
 }
 
 function tryResult() {
-    if(Object.keys(data).length >= wires)
+    if(data.length >= wires)
         calculateResult();
 }
 
 function calculateResult() {
     let colors = [];
-    colors[1] = data["wire1"].color;
-    colors[2] = data["wire2"].color;
-    colors[3] = data["wire3"].color;
+    colors[1] = data[1].color;
+    colors[2] = data[2].color;
+    colors[3] = data[3].color;
     switch (wires) {
         case 3:
             if(colors[1] !== "red" && colors[2] !== "red" && colors[3] !== "red") {
@@ -105,7 +132,7 @@ function calculateResult() {
             }
             break;
         case 4:
-            colors[4] = data["wire4"].color;
+            colors[4] = data[4].color;
             if(amountOfColor(colors, "red") > 1 && serial.lastOdd) {
                 setResult(`Cut the *${numToWord(getPosOf(colors, "red", "last"))}* wire`)
             } else if(colors[4] === "yellow" && amountOfColor(colors, "red") === 0) {
@@ -119,8 +146,8 @@ function calculateResult() {
             }
             break;
         case 5:
-            colors[4] = data["wire4"].color;
-            colors[5] = data["wire5"].color;
+            colors[4] = data[4].color;
+            colors[5] = data[5].color;
             if(colors[5] === "black" && serial.lastOdd) {
                 setResult(`Cut the *fourth* wire`);
             } else if(amountOfColor(colors, "red") === 1 && amountOfColor(colors, "yellow") > 1) {
@@ -132,9 +159,9 @@ function calculateResult() {
             }
             break;
         case 6:
-            colors[4] = data["wire4"].color;
-            colors[5] = data["wire5"].color;
-            colors[6] = data["wire6"].color;
+            colors[4] = data[4].color;
+            colors[5] = data[5].color;
+            colors[6] = data[6].color;
             if(amountOfColor(colors, "yellow") === 0 && serial.lastOdd) {
                 setResult(`Cut the *third* wire`);
             } else if(amountOfColor(colors, "yellow") === 1 && amountOfColor(colors, "white") > 1) {

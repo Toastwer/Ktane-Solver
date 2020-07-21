@@ -4,8 +4,18 @@ let activeStage = "1-1";
 
 $(".stage1.2, .stage1.3, .stage2, .stage3, .stage4, .stage5").hide();
 $(() => {
-    
+    //TODO: sessionStore
+    // const _memory =  sessionStorage.getItem("memory").split("|");
+    // if(_memory != null) {
+    //     positions =  _memory[0];
+    //     labels =  _memory[1];
+    //     activeStage =  _memory[2];
+    // }
 });
+
+// function sessionStore() {
+//     sessionStorage.setItem("memory", positions + "|" + label + "|" + activeStage);
+// }
 
 $("body").on("click", ".button-hollow", function() {
     const stage = $(this).parent().parent().attr("class").split(" ")[1];

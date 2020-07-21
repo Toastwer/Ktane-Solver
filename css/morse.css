@@ -1,0 +1,17 @@
+.current-input {
+    height: 64px;
+    padding-bottom: 15px;
+    display: grid;
+    grid-auto-flow: column;
+    width: min-content;
+}
+
+.dash, .space {
+    height: 64px;
+    width: 40px;
+}
+
+.dot {
+    height: 64px;
+    width: 16px;
+}

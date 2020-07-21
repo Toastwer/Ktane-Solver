@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/main.js"></script>
+
+    <title>Ktane Solver</title>
+  </head>
+  <body>
+    <div id="overlay"></div>
+
+    <ul class="navbar"></ul>
+        
+    <div id="content">
+        <h1 class="title">Morse code</h1>
+
+        <div class="container">
+          <div class="section">
+            <p class="title">Light flashes:</p>
+
+            <div class="current-input">
+                
+            </div>
+
+            <div class="flash-input">
+                <button class="button-hollow gray" id="short">Short</button>
+                <button class="button-hollow gray" id="long">Long</button>
+                <button class="button-hollow white" id="pause">Pause</button>
+                <button class="button-filled yellow" id="back">Back</button>
+                <button class="button-filled red" id="reset">Reset</button>
+              </div>
+          </div>
+
+          <div class="section">
+            <p class="title">Result:</p>
+
+            <p id="outText">...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="/scripts/morse.js"></script>
+  <link rel="stylesheet" href="/css/morse.css">
+</html>

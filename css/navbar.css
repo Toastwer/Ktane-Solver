@@ -79,6 +79,16 @@
 	scale: 80%;
 }
 
+.navbar-item-whoof a::before {
+	background-image: url("/icons/whoof.png");
+	scale: 80%;
+}
+
+.navbar-item-memory a::before {
+	background-image: url("/icons/memory.png");
+	scale: 80%;
+}
+
 .navbar-item a:hover::before {
 	filter: none;
 }
