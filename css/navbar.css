@@ -94,6 +94,12 @@
 	scale: 80%;
 }
 
+.navbar-item-password a::before {
+	background-image: url("/icons/password.png");
+	scale: 80%;
+}
+
+
 .navbar-item a:hover::before {
 	filter: none;
 }
