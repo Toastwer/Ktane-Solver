@@ -1,0 +1,71 @@
+.description {
+    margin: 0.5rem auto;
+    border: 2px var(--gray-dark) solid;
+    border-radius: 10px;
+    width: max-content;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.description p {
+    font-size: 0.8rem;
+}
+
+.maze {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px;
+    grid-auto-rows: 60px 60px 60px 60px 60px 60px;
+
+    border: 4px var(--gray) solid;
+    border-radius: 10px;
+    width: min-content;
+}
+
+.outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maze .square {
+    width: 50px;
+    height: 50px;
+    background-color: var(--gray-dark);
+
+    border: 3px #4e5155 solid;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition-duration: 300ms;
+}
+
+.maze .square.green {
+    background-color: var(--light-green);
+    border-radius: 30px;
+    border-color: var(--green);
+}
+
+.maze .square.blue {
+    background-color: var(--light-blue);
+    border-radius: 15px;
+    border-color: var(--blue);
+}
+
+.maze .square.red {
+    background-color: var(--light-red);
+    border-radius: 0;
+    border-color: var(--red);
+}
+
+.outline.bottom {
+    border-bottom: 3px solid var(--dark);
+    position: relative;
+    bottom: -1.5px;
+}
+
+.outline.side {
+    border-right: 3px solid var(--dark);
+    position: relative;
+    right: -1.5px;
+}

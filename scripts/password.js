@@ -28,11 +28,11 @@ $("body").on("input", ".text-input input", function() {
 
 function getWordMatches() {
     const matches = words.slice();
-    matches.forEach((word, _index) => {
+    matches.forEach((word, wordIndex) => {
         inputs.forEach((input, index) => {
-            if(input !== "" && !input.split("").includes(word.charAt(index)))
-                matches[_index] = "-";
+            if(input !== "" && ![...input].includes(word.charAt(index)))
+                matches.splice(wordIndex, 1);
         });
     });
-    return matches.filter(x => x !== "-");
+    return matches;
 }
