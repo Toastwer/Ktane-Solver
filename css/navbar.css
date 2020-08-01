@@ -99,6 +99,10 @@
 	scale: 80%;
 }
 
+.navbar-item-maze a::before {
+	background-image: url("/icons/maze.png");
+	scale: 80%;
+}
 
 .navbar-item a:hover::before {
 	filter: none;
