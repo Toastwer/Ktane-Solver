@@ -1,13 +1,10 @@
+let mazes = [];
+
 $(() => {
-
+    $.getJSON("/scripts/maze.json", function (data) {
+        mazes = data;
+    });
 });
-
-const mazes = [["", "_", "|", "", "_", "_",
-               "|", "", "_|", "_", "_", "",
-               "|", "_", "|", "", "_", "",
-               "|", "_", "_", "_|", "_", "",
-               "", "_", "|", "", "_|", "",
-               "", "|", "", "|", "", ""]];
 
 let green = [];
 let red = [];
@@ -58,47 +55,53 @@ $(".maze").on("click", ".square", function () {
 function getOut() { 
     if(green.length < 2) {
         out("...");
+        showMaze(-1);
     } else if(green.length > 2) {
         out("#You can only choose two circles");
+        showMaze(-1);
     } else if(red.length > 1) {
         out("#You can only choose one endpoint");
+        showMaze(-1);
     } else if(blue.length > 1) {
         out("#You can only choose one startpoint");
+        showMaze(-1);
     } else {
-        if(true || red !== 0) {
-            if(arraysEqual(green, [7, 18])) {
-                showMaze(1);
-                out("1");
-            } else if(arraysEqual(green, [11, 20])) {
-                out("2");
-            } else if(arraysEqual(green, [22, 24])) {
-                out("3");
-            } else if(arraysEqual(green, [1, 19])) {
-                out("4");
-            } else if(arraysEqual(green, [17, 34])) {
-                out("5");
-            } else if(arraysEqual(green, [5, 27])) {
-                out("6");
-            } else if(arraysEqual(green, [2, 32])) {
-                out("7");
-            } else if(arraysEqual(green, [4, 21])) {
-                out("8");
-            } else if(arraysEqual(green, [9, 25])) {
-                out("9");;
-            } else {
-                out("#A maze with those circles does not exist");
-            }
+        if(arraysEqual(green, mazes["maze1"]["circles"])) {
+            showMaze(1);
+        } else if(arraysEqual(green, mazes["maze2"]["circles"])) {
+            showMaze(2);
+        } else if(arraysEqual(green, mazes["maze3"]["circles"])) {
+            showMaze(3);
+        } else if(arraysEqual(green, mazes["maze4"]["circles"])) {
+            showMaze(4);
+        } else if(arraysEqual(green, mazes["maze5"]["circles"])) {
+            showMaze(5);
+        } else if(arraysEqual(green, mazes["maze6"]["circles"])) {
+            showMaze(6);
+        } else if(arraysEqual(green, mazes["maze7"]["circles"])) {
+            showMaze(7);
+        } else if(arraysEqual(green, mazes["maze8"]["circles"])) {
+            showMaze(8);
+        } else if(arraysEqual(green, mazes["maze9"]["circles"])) {
+            showMaze(9);
+        } else {
+            out("#A maze with those circles does not exist");
         }
     }
 }
 
 function showMaze(id) {
-    const maze = mazes[id - 1];
+    if(id === -1) {
+        for (let i = 0; i < 36; i++)
+            $(`#${i + 1}`).parent().removeClass("side").removeClass("bottom");
+        return;
+    }
+    const maze = mazes[`maze${id}`]["walls"];
     maze.forEach((element, index) => {
         element.split("").forEach(elem => {
-            if(elem === "|") {
+            if(elem === "r") {
                 $(`#${index + 1}`).parent().addClass("side");
-            } else if(elem === "_") {
+            } else if(elem === "d") {
                 $(`#${index + 1}`).parent().addClass("bottom");
             }
         });
@@ -119,18 +122,18 @@ function out(text) {
 }
 
 function calcShortestRoute(maze) {
-    let distances = [{square: blue[0], distance: 0, route: [blue[0]]}];
+    let distances = [{square: blue[0], distance: 0, route: []}];
     let visited = [];
     let result = null;
     const sides = [-6, -1, 6, 1];
 
     let s = 0;
-    while(s <= 1000) {
+    while(visited.length < 36) {
         distances.forEach(elem => {
             sides.forEach(side => {
                 const target = elem.square + side;
                 if(target >= 1 && target <= 36 && !visited.includes(target) 
-                    && !maze[target - 1].split("").includes(side % 6 === 0 ? "_" : "|") 
+                    && !maze[getTarget(elem.square, side)].split("").includes(side % 6 === 0 ? "d" : "r") 
                     && !isWall(elem.square, side)) {
                     let _route = elem.route.slice();
                     _route.push(elem.square);
@@ -143,31 +146,67 @@ function calcShortestRoute(maze) {
         s++;
     }
 
-    console.log(distances);
-
     distances.forEach(elem => {
         if(elem.square === red[0])
             if(result == null || elem.length < result.length)
                 result = elem;
     });
 
-    console.log(result);
+    let arr = result.route;
+    arr.push(red[0]);
+
+    out(getPath(arr).join(", "));
 }
 
-function isWall(a, b) {
-    if(a % 6 === 0) {
-        if(b === 1)
-            return true;
-    } else if((a - 1) % 6 === 0) {
-        if(b === -1)
-            return true;
-    } else if(a >= 1 && a <= 6) {
-        if(b === 6)
-            return true;
-    } else if(a >= 31 && a <= 36) {
-        if(b === -6)
-            return true;
+function getPath(squares) {
+    let out = [];
+    squares.forEach((id, index) => {
+        if(index < squares.length - 1) {
+            switch (squares[index + 1] - id) {
+                case -6:
+                    out.push("Up");
+                    break;
+                case -1:
+                    out.push("Left");
+                    break;
+                case 1:
+                    out.push("Right");
+                    break;
+                case 6:
+                    out.push("Down");
+                    break;
+            }
+        }
+    });
+    return out;
+}
+
+function getTarget(id, side) {
+    switch (side) {
+        case -6:
+            return id - 7;
+        case -1:
+            return id - 2;
+        case 1:
+            return id - 1;
+        case 6:
+            return id - 1;
     }
+}
+
+function isWall(id, side) {
+    if(id % 6 === 0 && side === 1)
+        return true;
+    
+    if((id - 1) % 6 === 0 && side === -1)
+        return true;
+    
+    if(id >= 1 && id <= 6 && side === -6)
+        return true;
+    
+    if(id >= 31 && id <= 36 && side === 6)
+        return true;
+    
 
     return false;
 }
