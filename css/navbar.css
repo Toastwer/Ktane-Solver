@@ -104,6 +104,11 @@
 	scale: 80%;
 }
 
+.navbar-item-wirecomp a::before {
+	background-image: url("/icons/wirecomp.png");
+	scale: 80%;
+}
+
 .navbar-item a:hover::before {
 	filter: none;
 }

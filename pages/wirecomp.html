@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/scripts/main.js"></script>
+
+    <title>Ktane Solver</title>
+  </head>
+  <body>
+    <div id="overlay"></div>
+
+    <ul class="navbar"></ul>
+        
+    <div id="content">
+        <h1 class="title">Complicated Wires</h1>
+
+        <div class="section">
+            <div class="wires">
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="title">Relevant to this puzzle:</p>
+            <div class="footer-section padding">
+                <p class="subtitle">Serial Number:</p>
+    
+                <div class="text-input">
+                  <input type="text" placeholder="Serial number..." id="serial-input">
+                </div>
+            </div> 
+            <div class="footer-section padding">
+                <p class="subtitle">Ports:</p>
+                
+                <div class="toggle-parent">
+                    <div class="toggle">
+                        <span class="text">Parallel</span>
+                        <label class="switch">
+                            <input type="checkbox" id="parallel-input">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div> 
+            <div class="footer-section">
+                <p class="subtitle">Number of batteries:</p>
+                <div class="integer-input" id="batteries-input">
+                    <img class="minus" src="/icons/minus.png"></img>
+                    <p class="number">0</p>
+                    <img class="plus" src="/icons/plus.png"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+
+  <script src="/scripts/wirecomp.js"></script>
+  <link rel="stylesheet" href="/css/wirecomp.css">
+</html>

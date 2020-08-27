@@ -1,0 +1,80 @@
+.wires {
+    margin-top: 25px;
+}
+
+.wire {
+	border: 2px solid var(--gray-dark);
+	border-radius: 15px;
+	width: max-content;
+	padding-left: 13px;
+	padding-right: 13px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.wire .text {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.button-hollow.red-white {
+	border-color: var(--red) var(--white) var(--white) var(--red);
+	border-style: solid;
+}
+
+.button-hollow.blue-white {
+	border-color: var(--blue) var(--white) var(--white) var(--blue);
+	border-style: solid;
+}
+
+.button-hollow.red-blue {
+	border-color: var(--red) var(--blue) var(--blue) var(--red);
+	border-style: solid;
+}
+
+.button-hollow:hover.red-white, .button-hollow.red-white.active {
+	background-image: linear-gradient(-15deg,
+	var(--white) 50%, var(--red) 50%);
+	color: var(--black);
+}
+
+.button-hollow:hover.blue-white, .button-hollow.blue-white.active {
+	background-image: linear-gradient(-15deg,
+	var(--white) 50%, var(--blue) 50%);
+	color: var(--black);
+}
+
+.button-hollow:hover.red-blue, .button-hollow.red-blue.active {
+	background-image: linear-gradient(-15deg,
+	var(--blue) 50%, var(--red) 50%);
+	color: var(--black);
+}
+
+.v-break {
+    display: inline;
+	border-right: 3px var(--gray) solid;
+	border-radius: 2px;
+	padding: 0 1rem;
+	margin: 1rem 0;
+}
+
+.out {
+    display: inline-block;
+    padding: 0 1rem;
+    width: 100px;
+    text-align: center;
+}
+
+.out p {
+    display: inline;
+    font-weight: bold;
+    margin: 0;
+}
+
+.red p {
+    color: var(--red);
+}
+
+.green p {
+    color: var(--green);
+}

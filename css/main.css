@@ -325,6 +325,10 @@ input:checked + .slider:before {
 	width: 125px;
 }
 
+.button-hollow.s3 {
+	width: 140px;
+}
+
 .button-hollow.red {
 	border-color: var(--red);
 }

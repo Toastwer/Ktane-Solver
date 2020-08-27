@@ -13,6 +13,18 @@ $(() => {
     validateInputs();
 });
 
+$("body").on("click", "#car-input", () =>  { 
+    setIndicator("car", { state: $("#car-input").prop("checked") });
+
+    tryResult();
+});
+
+$("body").on("click", "#frk-input", () =>  { 
+    setIndicator("frk", { state: $("#frk-input").prop("checked") });
+
+    tryResult();
+});
+
 $("body").on("click", "#batteries-input .minus", () => {
     if(batteries <= 0)
         return;
@@ -20,12 +32,14 @@ $("body").on("click", "#batteries-input .minus", () => {
     $("#batteries-input .number").html(removeBattery());
     
     validateInputs();
+    tryResult();
 });
 
 $("body").on("click", "#batteries-input .plus", () => {
     $("#batteries-input .number").html(addBattery());
 
     validateInputs();
+    tryResult();
 });
 
 function validateInputs() {
