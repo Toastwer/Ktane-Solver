@@ -42,6 +42,9 @@ $(() => {
                         </li>
                         <li class="navbar-item navbar-item-password">
                             <a>Password</a>
+                        </li>
+                        <li class="navbar-item navbar-item-settings">
+                            <a>Settings</a>
                         </li>`);
 
     $("body").on("mouseenter", ".navbar", () => {

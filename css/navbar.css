@@ -9,7 +9,6 @@
 	overflow: hidden;
 	transition-duration: 100ms;
 	width: 93px;
-	
 }
 
 .navbar {
@@ -22,7 +21,6 @@
 	list-style: none;
 	padding-left: 20px;
 	width: 100%;
-	
 }
 
 .navbar-item a {
@@ -107,6 +105,21 @@
 .navbar-item-wirecomp a::before {
 	background-image: url("/icons/wirecomp.png");
 	scale: 80%;
+}
+
+.navbar-item-wireseq a::before {
+	background-image: url("/icons/wireseq.png");
+	scale: 80%;
+}
+
+.navbar-item-settings a::before {
+	background-image: url("/icons/settings.png");
+	scale: 80%;
+}
+
+.navbar-item-settings {
+	position: absolute;
+	bottom: 0;
 }
 
 .navbar-item a:hover::before {

@@ -31,7 +31,7 @@
 	--dark: #64799c;
 	--tinted-gray: #7c92a5;
 	--black: black;
-	--less-black: rgb(14, 14, 14);
+	--less-black: #202431;
 	/* #endregion */
 
 	/* #region Scrollbar Firefox */
@@ -371,6 +371,10 @@ input:checked + .slider:before {
 
 .button-hollow:hover.yellow {
 	background-color: var(--yellow);
+}
+
+.button-hollow:hover.gray {
+	background-color: var(--less-black);
 }
 
 .button-hollow:hover.black {
