@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+	<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/navbar.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="/scripts/main.js"></script>
+
+		<title>Ktane Solver</title>
+	</head>
+	<body>
+		<div id="overlay"></div>
+
+		<ul class="navbar"></ul>
+
+		<div id="content">
+			<h1 class="title">Knob:</h1>
+
+			<div class="container">
+				<p class="subtitle">I recommend looking at the first three lights.</p>
+				<div class="section">
+					<p class="title">Up:</p>
+					<div class="lights">
+						<div class="half">
+							<span class="off highlight"></span><span class="off highlight"></span><span class="on highlight"></span><span class="off"></span><span class="on"></span><span class="on"></span>
+							<span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="off"></span><span class="on"></span>
+						</div>
+						<div class="half">
+							<span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span>
+							<span class="off"></span><span class="on"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="on"></span>
+						</div>
+					</div>
+				</div>
+				<div class="section">
+					<p class="title">Down:</p>
+					<div class="lights">
+						<div class="half">
+							<span class="off highlight"></span><span class="on highlight"></span><span class="on highlight"></span><span class="off"></span><span class="off"></span><span class="on"></span>
+							<span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="off"></span><span class="on"></span>
+						</div>
+						<div class="half">
+							<span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span>
+							<span class="off"></span><span class="on"></span><span class="off"></span><span class="off"></span><span class="off"></span><span class="on"></span>
+						</div>
+					</div>
+				</div>
+				<div class="section">
+					<p class="title">Left:</p>
+					<div class="lights">
+						<div class="half">
+							<span class="off highlight"></span><span class="off highlight"></span><span class="off highlight"></span><span class="off"></span><span class="on"></span><span class="off"></span>
+							<span class="on"></span><span class="off"></span><span class="off"></span><span class="on"></span><span class="on"></span><span class="on"></span>
+						</div>
+						<div class="half">
+							<span class="off"></span><span class="off"></span><span class="off"></span><span class="off"></span><span class="on"></span><span class="off"></span>
+							<span class="off"></span><span class="off"></span><span class="off"></span><span class="on"></span><span class="on"></span><span class="off"></span>
+						</div>
+					</div>
+				</div>
+				<div class="section">
+					<p class="title">Right:</p>
+					<div class="lights">
+						<div class="half">
+							<span class="on highlight"></span><span class="off highlight"></span><span class="on highlight"></span><span class="on"></span><span class="on"></span><span class="on"></span>
+							<span class="on"></span><span class="on"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span>
+						</div>
+						<div class="half">
+							<span class="on"></span><span class="off"></span><span class="on"></span><span class="on"></span><span class="off"></span><span class="off"></span>
+							<span class="on"></span><span class="on"></span><span class="on"></span><span class="off"></span><span class="on"></span><span class="off"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<style>
+		.lights {
+			width: min-content;
+			height: min-content;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 20px;
+			border: var(--gray) 3px solid;
+			border-radius: 10px;
+			padding: 5px
+		}
+
+		.half {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-gap: 2px;
+		}
+
+		.on {
+			display: inline-block;
+			height: 25px;
+			width: 25px;
+			background-color: var(--green);
+			border-radius: 50%;
+		}
+
+		.off {
+			display: inline-block;
+			height: 25px;
+			width: 25px;
+			background-color: var(--gray);
+			border-radius: 50%;
+		}
+	</style>
+</html>

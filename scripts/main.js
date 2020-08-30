@@ -1,3 +1,7 @@
+let allModules = [];
+let activeModules = new Set();
+let json;
+
 let indicators = new Object();
 let ports = new Object(); 
 let serial = new Object();
@@ -5,47 +9,26 @@ let batteries = 0;
 let strikes = 0;
 
 $(() => {
-    $("#content").css("margin-bottom", $(".footer").height());
+    const _activeModules = new Set(JSON.parse(sessionStorage.getItem("activeModules")));
+    if(_activeModules != null) activeModules = _activeModules;
+    
+    $.getJSON("/scripts/data.json", function (data) {
+        for(const key in data["modules"]["normal"]) allModules.push(key);
+        for(const key in data["modules"]["needy"]) allModules.push(key);
+        for(const key in data["modules"]["mod"]) allModules.push(key);
 
-    $(".navbar").html(` <li class="navbar-item navbar-item-home">
-                            <a>Home</a>
-                        </li>
-                        <li class="navbar-item navbar-item-button">
-                            <a>Button</a>
-                        </li>
-                        <li class="navbar-item navbar-item-keypads">
-                            <a>Keypads</a>
-                        </li>
-                        <li class="navbar-item navbar-item-simon">
-                            <a>Simon Says</a>
-                        </li>
-                        <li class="navbar-item navbar-item-whoof">
-                            <a>Who's on First</a>
-                        </li>
-                        <li class="navbar-item navbar-item-memory">
-                            <a>Memory</a>
-                        </li>
-                        <li class="navbar-item navbar-item-morse">
-                            <a>Morse Code</a>
-                        </li>
-                        <li class="navbar-item navbar-item-wiresimp">
-                            <a>Simple Wires</a>
-                        </li>
-                        <li class="navbar-item navbar-item-wirecomp">
-                            <a>Complicated Wires</a>
-                        </li>
-                        <li class="navbar-item navbar-item-wireseq">
-                            <a>Wire Sequences</a>
-                        </li>
-                        <li class="navbar-item navbar-item-maze">
-                            <a>Maze</a>
-                        </li>
-                        <li class="navbar-item navbar-item-password">
-                            <a>Password</a>
-                        </li>
-                        <li class="navbar-item navbar-item-settings">
-                            <a>Settings</a>
-                        </li>`);
+        if(activeModules.size === 0) {
+            data["modules"]["defaultActive"].forEach(module => {
+                addActiveModule(module);
+            });
+        }
+
+        json = data;
+
+        updateNavBar();
+    });
+
+    $("#content").css("margin-bottom", $(".footer").height());
 
     $("body").on("mouseenter", ".navbar", () => {
         $("#overlay").css("background-color", "rgba(0, 0, 0, 0.5)");
@@ -75,6 +58,35 @@ $(() => {
     const _strikes =  parseInt(sessionStorage.getItem("strikes"));
     if(!isNaN(_strikes)) strikes = _strikes;
 });
+
+function addActiveModule(elem) {
+    activeModules.add(elem);
+    sessionStorage.setItem("activeModules", JSON.stringify(Array.from(activeModules)));
+}
+
+function removeActiveModule(elem) {
+    activeModules.delete(elem);
+    sessionStorage.setItem("activeModules", JSON.stringify(Array.from(activeModules)));
+}
+
+function updateNavBar() {
+    let html = `<li class="navbar-item navbar-item-home">
+                    <a>Home</a>
+                </li>`;
+    allModules.forEach(val => {
+        if(val && activeModules.has(val)) {
+            const name = json["modules"]["normal"][val] || json["modules"]["needy"][val] || json["modules"]["mod"][val];
+            html += `<li class="navbar-item navbar-item-${val}">
+                        <a>${name}</a>
+                    </li>`;
+        }
+    });
+    html += `<li class="navbar-item navbar-item-settings">
+                <a>Settings</a>
+            </li>`;
+
+    $(".navbar").html(html);
+}
 
 function addBattery() {
     batteries++;

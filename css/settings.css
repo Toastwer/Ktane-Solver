@@ -1,0 +1,79 @@
+.container .title {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.subsection {
+    border-top: 2px solid var(--gray);
+    border-radius: 2px;
+    width: max-content;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    margin-top: 15px;
+}
+
+.icons {
+    display: flex;
+}
+
+.icon {
+    display: inline-block;
+    height: 130px;
+    width: 115px;
+
+    text-align: center;
+    justify-content: center;
+
+    border: 3px solid var(--gray-dark);
+    border-radius: 15px;
+
+    transition-duration: 100ms;
+
+    margin-right: 10px;
+}
+
+.icon p {
+    display: block;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.icon img {
+    height: 60px;
+    margin-top: 10px;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* .icons div {
+	border: 3px solid var(--gray-dark);
+    border-radius: 15px;
+    height: 100px;
+    padding: 10px;
+    margin: 0 15px 15px 0;
+    transition-duration: 100ms;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+} */
+
+.icon:hover {
+    border-color: var(--light-gray);
+    scale: 105%;
+    cursor: pointer;
+}
+
+.icon.active {
+    border-color: var(--green);
+}
+
+.icon.active:hover {
+    border-color: var(--light-green);
+}

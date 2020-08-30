@@ -1,8 +1,8 @@
-let json;
+let wireSeqJson;
 
 $(() => {
     $.getJSON("/scripts/wireseq.json", function (data) {
-        json = data;
+        wireSeqJson = data;
     });
 
     init();
@@ -149,14 +149,17 @@ function getResults() {
         if(colors.has(i) && letters.has(i)) {
             const color = colors.get(i);
 
-            if(color === "red")
+            if(color === "red") {
                 redWires++;
-            else if(color === "blue")
+                wireSeqJson[color][redWires].includes(letters.get(i)) ? out(i, "cut") : out(i, "keep");
+            } else if(color === "blue") {
                 blueWires++;
-            else if(color === "black")
+                wireSeqJson[color][blueWires].includes(letters.get(i)) ? out(i, "cut") : out(i, "keep");
+            } else if(color === "black") {
                 blackWires++;
+                wireSeqJson[color][blackWires].includes(letters.get(i)) ? out(i, "cut") : out(i, "keep");
+            }
 
-            json[color][redWires].includes(letters.get(i)) ? out(i, "cut") : out(i, "keep");
         } else {
             out(i, "null");
         }

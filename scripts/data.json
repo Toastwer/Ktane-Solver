@@ -1,0 +1,25 @@
+{
+    "modules": {
+        "defaultActive": ["button", "keypads", "simon", "whoof", "memory", "morse", "wiresimp",
+                        "wirecomp", "wireseq", "maze", "password"],
+        "normal": {
+            "button": "Button",
+            "keypads": "Keypads",
+            "simon": "Simon Says",
+            "whoof": "Who's on first",
+            "memory": "Memory",
+            "morse": "Morse code",
+            "wiresimp": "Simple Wires",
+            "wirecomp": "Complicated Wires",
+            "wireseq": "Wire Sequences",
+            "maze": "Maze",
+            "password": "Password"
+        },
+        "needy": {
+            "knob": "Knob"
+        },
+        "mod": {
+
+        }
+    }
+}

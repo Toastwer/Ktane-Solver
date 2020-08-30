@@ -117,9 +117,14 @@
 	scale: 80%;
 }
 
+.navbar-item-knob a::before {
+	background-image: url("/icons/knob.png");
+	scale: 80%;
+}
+
 .navbar-item-settings {
 	position: absolute;
-	bottom: 0;
+	bottom: 10px;
 }
 
 .navbar-item a:hover::before {
