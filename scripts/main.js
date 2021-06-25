@@ -30,6 +30,9 @@ $(() => {
 
     $("#content").css("margin-bottom", $(".footer").height());
 
+    if($("body:hover").length != 0)
+        $("#overlay").css("background-color", "rgba(0, 0, 0, 0.5)");
+
     $("body").on("mouseenter", ".navbar", () => {
         $("#overlay").css("background-color", "rgba(0, 0, 0, 0.5)");
     });

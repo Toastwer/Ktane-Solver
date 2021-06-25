@@ -66,27 +66,14 @@ function getOut() {
         out("#You can only choose one startpoint");
         showMaze(-1);
     } else {
-        if(arraysEqual(green, mazes["maze1"]["circles"])) {
-            showMaze(1);
-        } else if(arraysEqual(green, mazes["maze2"]["circles"])) {
-            showMaze(2);
-        } else if(arraysEqual(green, mazes["maze3"]["circles"])) {
-            showMaze(3);
-        } else if(arraysEqual(green, mazes["maze4"]["circles"])) {
-            showMaze(4);
-        } else if(arraysEqual(green, mazes["maze5"]["circles"])) {
-            showMaze(5);
-        } else if(arraysEqual(green, mazes["maze6"]["circles"])) {
-            showMaze(6);
-        } else if(arraysEqual(green, mazes["maze7"]["circles"])) {
-            showMaze(7);
-        } else if(arraysEqual(green, mazes["maze8"]["circles"])) {
-            showMaze(8);
-        } else if(arraysEqual(green, mazes["maze9"]["circles"])) {
-            showMaze(9);
-        } else {
-            out("#A maze with those circles does not exist");
+        for (let i = 1; i <= 9; i++) {
+            if(arraysEqual(green, mazes[`maze${i}`]["circles"])) {
+                showMaze(i);
+                return;
+            }
         }
+
+        out("#A maze with those circles does not exist");
     }
 }
 

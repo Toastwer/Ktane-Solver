@@ -88,6 +88,13 @@ body::-webkit-scrollbar-thumb {
 	margin: 1rem 0;
 }
 
+.divider-section {
+	display: block;
+	border-top: 4px var(--light-gray) solid;
+	border-radius: 2px;
+	margin: 1rem 0;
+}
+
 .footer {
 	position: fixed;
 	bottom: 0%;

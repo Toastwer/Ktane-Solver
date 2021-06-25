@@ -124,14 +124,16 @@ $("body").on("click", ".wires .wire button", function() {
 });
 
 function getResults() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
         if(!wireData.has(i))
             continue;
 
         const data = wireData.get(i);
-        console.log(serial.lastOdd);
-        console.log(data.star);
-        console.log(data.light);
+        // console.log("---");
+        // console.log(i);
+        // console.log(serial.lastOdd);
+        // console.log(data.star);
+        // console.log(data.light);
         
         switch (data.color) {
             case "white":
