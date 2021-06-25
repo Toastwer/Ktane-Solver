@@ -129,11 +129,6 @@ function getResults() {
             continue;
 
         const data = wireData.get(i);
-        // console.log("---");
-        // console.log(i);
-        // console.log(serial.lastOdd);
-        // console.log(data.star);
-        // console.log(data.light);
         
         switch (data.color) {
             case "white":

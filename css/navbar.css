@@ -44,7 +44,7 @@
 	height: 50px;
 	margin-right: 25px;
 
-	background-image: url("/icons/null.png");
+	background-image: url("../icons/null.png");
 	background-size: cover;
 	filter: grayscale() brightness(75%);
 	
@@ -52,73 +52,73 @@
 }
 
 .navbar-item-home a::before {
-	background-image: url("/icons/home.png");
+	background-image: url("../icons/home.png");
 	scale: 80%;
 	filter: brightness(0%);
 }
 
 .navbar-item-button a::before {
-	background-image: url("/icons/button.png");
+	background-image: url("../icons/button.png");
 	scale: 80%;
 }
 
 .navbar-item-wiresimp a::before {
-	background-image: url("/icons/wiresimp.png");
+	background-image: url("../icons/wiresimp.png");
 	scale: 80%;
 }
 
 .navbar-item-keypads a::before {
-	background-image: url("/icons/keypads.png");
+	background-image: url("../icons/keypads.png");
 	scale: 80%;
 }
 
 .navbar-item-simon a::before {
-	background-image: url("/icons/simon.png");
+	background-image: url("../icons/simon.png");
 	scale: 80%;
 }
 
 .navbar-item-whoof a::before {
-	background-image: url("/icons/whoof.png");
+	background-image: url("../icons/whoof.png");
 	scale: 80%;
 }
 
 .navbar-item-memory a::before {
-	background-image: url("/icons/memory.png");
+	background-image: url("../icons/memory.png");
 	scale: 80%;
 }
 
 .navbar-item-morse a::before {
-	background-image: url("/icons/morse.png");
+	background-image: url("../icons/morse.png");
 	scale: 80%;
 }
 
 .navbar-item-password a::before {
-	background-image: url("/icons/password.png");
+	background-image: url("../icons/password.png");
 	scale: 80%;
 }
 
 .navbar-item-maze a::before {
-	background-image: url("/icons/maze.png");
+	background-image: url("../icons/maze.png");
 	scale: 80%;
 }
 
 .navbar-item-wirecomp a::before {
-	background-image: url("/icons/wirecomp.png");
+	background-image: url("../icons/wirecomp.png");
 	scale: 80%;
 }
 
 .navbar-item-wireseq a::before {
-	background-image: url("/icons/wireseq.png");
+	background-image: url("../icons/wireseq.png");
 	scale: 80%;
 }
 
 .navbar-item-settings a::before {
-	background-image: url("/icons/settings.png");
+	background-image: url("../icons/settings.png");
 	scale: 80%;
 }
 
 .navbar-item-knob a::before {
-	background-image: url("/icons/knob.png");
+	background-image: url("../icons/knob.png");
 	scale: 80%;
 }
 

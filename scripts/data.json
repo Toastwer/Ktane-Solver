@@ -1,7 +1,6 @@
 {
     "modules": {
-        "defaultActive": ["button", "keypads", "simon", "whoof", "memory", "morse", "wiresimp",
-                        "wirecomp", "wireseq", "maze", "password"],
+        "defaultActive": ["button", "keypads", "simon", "whoof", "memory", "morse", "wiresimp", "wirecomp", "wireseq", "maze", "password"],
         "normal": {
             "button": "Button",
             "keypads": "Keypads",

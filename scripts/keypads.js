@@ -58,9 +58,9 @@ function calculateResult() {
     if(solution.length > 0) {
         const solutionOut = [];
         solution.forEach((icon, index) => {
-            let html = `<img class="${icon}" src="/icons/keypads/${icon}.png">`
+            let html = `<img class="${icon}" src="../icons/keypads/${icon}.png">`
             if(index < solution.length - 1)
-                html += `<img class="arrow" src="/icons/arrow.png">`;
+                html += `<img class="arrow" src="../icons/arrow.png">`;
 
             solutionOut[index] = html;
         });

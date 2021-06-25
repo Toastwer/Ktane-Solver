@@ -1,7 +1,7 @@
 let mazes = [];
 
 $(() => {
-    $.getJSON("/scripts/maze.json", function (data) {
+    $.getJSON("../scripts/maze.json", function (data) {
         mazes = data;
     });
 });

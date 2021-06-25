@@ -37,8 +37,8 @@ $("body").on("click", ".button-hollow, .button-filled", function() {
 
 function showInput() {
     $(".current-input").html(input
-        .replaceAll("•", `<img src="/icons/morse-dot.png" class="dot">`)
-        .replaceAll("▬", `<img src="/icons/morse-dash.png" class="dash">`)
+        .replaceAll("•", `<img src="../icons/morse-dot.png" class="dot">`)
+        .replaceAll("▬", `<img src="../icons/morse-dash.png" class="dash">`)
         .replaceAll("█", `<div class="space"></div>`));
 }
 

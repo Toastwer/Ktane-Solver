@@ -1,7 +1,7 @@
 let wireSeqJson;
 
 $(() => {
-    $.getJSON("/scripts/wireseq.json", function (data) {
+    $.getJSON("../scripts/wireseq.json", function (data) {
         wireSeqJson = data;
     });
 

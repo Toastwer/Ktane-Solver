@@ -9,7 +9,7 @@ $(".dropdown-content").hide();
 $(".stage2").hide();
 $(".stage3").hide();
 $(() => {
-    $.getJSON("/scripts/whoof.json", function (data) {
+    $.getJSON("../scripts/whoof.json", function (data) {
             const stage1 = data["stage1"];
             
             let html = "";

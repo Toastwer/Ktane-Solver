@@ -12,7 +12,7 @@ $(() => {
     const _activeModules = new Set(JSON.parse(sessionStorage.getItem("activeModules")));
     if(_activeModules != null) activeModules = _activeModules;
     
-    $.getJSON("/scripts/data.json", function (data) {
+    $.getJSON("../scripts/data.json", function (data) {
         for(const key in data["modules"]["normal"]) allModules.push(key);
         for(const key in data["modules"]["needy"]) allModules.push(key);
         for(const key in data["modules"]["mod"]) allModules.push(key);
@@ -30,7 +30,7 @@ $(() => {
 
     $("#content").css("margin-bottom", $(".footer").height());
 
-    if($("body:hover").length != 0)
+    if($("body .navbar:hover").length != 0)
         $("#overlay").css("background-color", "rgba(0, 0, 0, 0.5)");
 
     $("body").on("mouseenter", ".navbar", () => {
