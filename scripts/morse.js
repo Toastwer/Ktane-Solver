@@ -89,12 +89,12 @@ function calculateResult() {
                 if(morse.length === 1) {
                     result("...");
                 } else {
-                    switch (morse[2]) {
+                    switch (morse[1]) {
                         case "▬▬▬": //bo
                             if(morse.length === 3) {
                                 result("...");
                             } else {
-                                switch (morse[3]) {
+                                switch (morse[2]) {
                                     case "▬••▬": //box
                                         result("3.545");
                                         break;
@@ -111,7 +111,7 @@ function calculateResult() {
                         if(morse.length === 3) {
                             result("...");
                         } else {
-                            switch (morse[3]) {
+                            switch (morse[2]) {
                                 case "•": //bre
                                     result("3.572");
                                     break;
