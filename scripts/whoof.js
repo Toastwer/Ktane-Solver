@@ -87,8 +87,14 @@ $("body .stage1").on("click", ".dropdown-head", function() {
 });
 
 $("body .stage1").on("click", ".dropdown-item", function() {
-    stage1Input = $(this).html();
-    $(".stage1 .dropdown-head").html(stage1Input);
+    if($(this).attr("id") === "_blank") {
+        stage1Input = "_blank";
+        $(".stage1 .dropdown-head").html($(this).html());
+    } else {
+        stage1Input = $(this).html();
+        $(".stage1 .dropdown-head").html(stage1Input);
+    }
+    
     $(".stage1 .dropdown-head").removeClass("placeholder");
 
     if($(this).attr("id") === "_blank")
@@ -105,6 +111,8 @@ $("body .stage1").on("click", ".dropdown-item", function() {
 
 function stage2() {
     let btn = "";
+    console.log(stage1Json);
+    console.log(stage1Input);
     switch (stage1Json[stage1Input]) {
         case "tl":
             btn = "top left";
