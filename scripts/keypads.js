@@ -4,8 +4,8 @@ const solutions = [
     ["balloon", "at", "upsidedowny", "squigglyn", "squidknife", "hookn", "leftc"], 
     ["euro", "balloon", "leftc", "cursive", "hollowstar", "hookn", "questionmark"], 
     ["copyright", "pumpkin", "cursive", "doublek", "meltedthree", "upsidedowny", "hollowstar"], 
-    ["six", "paragraph", "bt", "squidknife", "doublek", "upsidedowny", "smileyface", "questionmark"], 
-    ["pitchfork", "smileyface", "bt", "leftc", "paragraph", "dragon", "filledstar"], 
+    ["six", "paragraph", "bt", "squidknife", "doublek", "upsidedowny", "smileyface"], 
+    ["pitchfork", "smileyface", "bt", "rightc", "paragraph", "dragon", "filledstar"], 
     ["six", "euro", "tracks", "ae", "pitchfork", "nwithhat", "omega"]];
 
 $(() => {

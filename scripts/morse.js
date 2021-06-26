@@ -63,7 +63,7 @@ function calculateResult() {
                             if(morse.length === 2) {
                                 result("...");
                             } else {
-                                switch (morse[3]) {
+                                switch (morse[2]) {
                                     case "•▬•": //str
                                         result("3.545");
                                         break;
