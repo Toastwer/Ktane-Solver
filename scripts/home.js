@@ -15,7 +15,7 @@ $("body").on("input", "#serial-input", () => {
     $("#serial-input").val(input);
     setSerial({ 
         input: input,
-        vowel: /[aeiou]/.test(input),
+        vowel: /[aeiou]/gi.test(input),
         lastOdd: input.charAt(input.length - 1) % 2 === 1
     });
 });

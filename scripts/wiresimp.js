@@ -66,6 +66,9 @@ function validateInputs() {
     } else if(wires >= 6) {
         $("#wires-input .plus").addClass("disabled");
         $("#wires-input .minus").removeClass("disabled");
+    } else {
+        $("#wires-input .plus").removeClass("disabled");
+        $("#wires-input .minus").removeClass("disabled");
     }
 }
 
