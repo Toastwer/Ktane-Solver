@@ -108,21 +108,21 @@ function calculateResult() {
                             }
                             break;
                         case "•▬•": //br
-                        if(morse.length === 3) {
-                            result("...");
-                        } else {
-                            switch (morse[2]) {
-                                case "•": //bre
-                                    result("3.572");
-                                    break;
-                                case "••": //bri
-                                    result("3.575");
-                                    break;
-                                default:
-                                    result("null");
-                                    break;
+                            if(morse.length === 3) {
+                                result("...");
+                            } else {
+                                switch (morse[2]) {
+                                    case "•": //bre
+                                        result("3.572");
+                                        break;
+                                    case "••": //bri
+                                        result("3.575");
+                                        break;
+                                    default:
+                                        result("null");
+                                        break;
+                                }
                             }
-                        }
                         break;
                         case "••": //bi
                             result("3.552");
@@ -136,7 +136,7 @@ function calculateResult() {
                     }
                 }
                 break;
-                case "••••": //h
+            case "••••": //h
                 result("3.515");
                 break;
             case "▬": //t

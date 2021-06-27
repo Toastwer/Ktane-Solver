@@ -26,7 +26,7 @@ $(() => {
     $(".wires").html(wires);
 
     $("#batteries-input .number").html(batteries);
-    $("#parallel-input").attr("checked", getPort("parallel").state);
+    $("#parallel-input").prop("checked", getPort("parallel").state);
     $("#serial-input").val(serial.input);
 
     validateInputs();

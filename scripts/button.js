@@ -7,8 +7,8 @@ $("#result2-section").hide();
 
 $(() => {
     $("#batteries-input .number").html(batteries);
-    $("#car-input").attr("checked", getIndicator("car").state);
-    $("#frk-input").attr("checked", getIndicator("frk").state);
+    $("#car-input").prop("checked", getIndicator("car").state);
+    $("#frk-input").prop("checked", getIndicator("frk").state);
 
     validateInputs();
 });

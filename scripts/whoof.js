@@ -13,7 +13,7 @@ $(() => {
             const stage1 = data["stage1"];
             
             let html = "";
-            Object.keys(stage1).forEach(key => {
+            Object.keys(stage1).sort().forEach(key => {
                 if(key === "_blank")
                     html += `<button class="dropdown-item yellow" id="${key}">Blank</button>`
                 else
@@ -26,7 +26,7 @@ $(() => {
             const stage2 = data["stage2"];
 
             html = "";
-            Object.keys(stage2).forEach(key => {
+            Object.keys(stage2).sort().forEach(key => {
                 html += `<button class="dropdown-item" id="${key}">${key}</button>`
             });
             $(".stage2 .dropdown-content").html(html);
@@ -71,7 +71,7 @@ $(() => {
 $("body .stage1").on("click", ".dropdown-head", function() {
     if($(this).hasClass("active")) {
         $(".stage1 .dropdown-content").show();
-        $(".stage1 .dropdown-content").animate({height: 0}, 
+        $(".stage1 .dropdown-content").animate({height: 0}, 300, "swing",
             function() { 
                 $(this).fadeOut(50);
                 $(".stage1 .dropdown-head").removeClass("active");
@@ -79,7 +79,7 @@ $("body .stage1").on("click", ".dropdown-head", function() {
     } else {
         $(".stage1 .dropdown-head").addClass("active");
         $(".stage1 .dropdown-content").css({height: 0});
-        $(".stage1 .dropdown-content").fadeIn(50).animate({height: divHeight}, 
+        $(".stage1 .dropdown-content").fadeIn(50).animate({height: divHeight}, 300, "swing",
             function() {
                 $(this).addClass("active")
         });
@@ -142,11 +142,11 @@ $("body .stage2").on("click", ".dropdown-head", function() {
     if($(this).hasClass("active")) {
         $(this).removeClass("active");
         $(".stage2 .dropdown-content").show();
-        $(".stage2 .dropdown-content").animate({height: 0}, function() { $(this).fadeOut(50) });
+        $(".stage2 .dropdown-content").animate({height: 0}, 300, "swing", function() { $(this).fadeOut(50) });
     } else {
         $(this).addClass("active");
         $(".stage2 .dropdown-content").css({height: 0});
-        $(".stage2 .dropdown-content").fadeIn(50).animate({height: divHeight});
+        $(".stage2 .dropdown-content").fadeIn(50).animate({height: divHeight}, 300, "swing");
     }
 });
 

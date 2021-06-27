@@ -10,36 +10,50 @@ let green = [];
 let red = [];
 let blue = [];
 
+let mazeLocked = false;
+$("#lock-maze").on("click", function() {
+    if(mazeLocked) {
+        $(this).removeClass("green");
+        $(this).addClass("gray");
+    } else {
+        $(this).removeClass("gray");
+        $(this).addClass("green");
+    }
+
+    mazeLocked = !mazeLocked;
+    getOut();
+});
+
 $(".maze").on("click", ".square", function () {
     const id = parseInt($(this).attr("id"));
     if($(this).hasClass("green")) {
-        // Red
+        // Blue
         $(this).removeClass("green");
-        $(this).removeClass("blue");
-        $(this).addClass("red");
+        $(this).addClass("blue");
+        $(this).removeClass("red");
         
-        red.push(id);
+        blue.push(id);
 
         if(green.includes(id))
             green.splice(green.indexOf(id), 1);
-    } else if ($(this).hasClass("red")) {
-        // Blue
-        $(this).removeClass("green");
-        $(this).removeClass("red");
-        $(this).addClass("blue");
-
-        blue.push(id);
-
-        if(red.includes(id))
-            red.splice(red.indexOf(id), 1);
     } else if ($(this).hasClass("blue")) {
-        // Normal
-        $(this).removeClass("red");
+        // Red
+        $(this).addClass("red");
         $(this).removeClass("green");
         $(this).removeClass("blue");
 
+        red.push(id);
+
         if(blue.includes(id))
             blue.splice(blue.indexOf(id), 1);
+    } else if ($(this).hasClass("red")) {
+        // Normal
+        $(this).removeClass("green");
+        $(this).removeClass("red");
+        $(this).removeClass("blue");
+
+        if(red.includes(id))
+            red.splice(red.indexOf(id), 1);
     } else {
         // Green
         $(this).removeClass("red");
@@ -53,37 +67,45 @@ $(".maze").on("click", ".square", function () {
 });
 
 function getOut() { 
-    if(green.length < 2) {
-        out("...");
-        showMaze(-1);
-    } else if(green.length > 2) {
-        out("#You can only choose two circles");
-        showMaze(-1);
-    } else if(red.length > 1) {
-        out("#You can only choose one endpoint");
-        showMaze(-1);
-    } else if(blue.length > 1) {
-        out("#You can only choose one startpoint");
-        showMaze(-1);
-    } else {
-        for (let i = 1; i <= 9; i++) {
-            if(arraysEqual(green, mazes[`maze${i}`]["circles"])) {
-                showMaze(i);
-                return;
+    if(!mazeLocked) {
+        if(green.length < 2) {
+            out("...");
+            showMaze(-1);
+        } else if(green.length > 2) {
+            out("#You can only choose two circles");
+            showMaze(-1);
+        } else if(red.length > 1) {
+            out("#You can only choose one endpoint");
+            showMaze(-1);
+        } else if(blue.length > 1) {
+            out("#You can only choose one startpoint");
+            showMaze(-1);
+        } else {
+            for (let i = 1; i <= 9; i++) {
+                if(arraysEqual(green, mazes[`maze${i}`]["circles"])) {
+                    showMaze(i);
+                    return;
+                }
             }
+    
+            out("#A maze with those circles does not exist");
         }
-
-        out("#A maze with those circles does not exist");
+    } else {
+        if(red.length === 1 && blue.length === 1)
+            calcShortestRoute(maze);
+        else
+            out("...");
     }
 }
 
+let maze;
 function showMaze(id) {
     if(id === -1) {
         for (let i = 0; i < 36; i++)
             $(`#${i + 1}`).parent().removeClass("side").removeClass("bottom");
         return;
     }
-    const maze = mazes[`maze${id}`]["walls"];
+    maze = mazes[`maze${id}`]["walls"];
     maze.forEach((element, index) => {
         element.split("").forEach(elem => {
             if(elem === "r") {
@@ -114,7 +136,6 @@ function calcShortestRoute(maze) {
     let result = null;
     const sides = [-6, -1, 6, 1];
 
-    let s = 0;
     while(visited.length < 36) {
         distances.forEach(elem => {
             sides.forEach(side => {
@@ -129,8 +150,6 @@ function calcShortestRoute(maze) {
                 }
             });
         });
-
-        s++;
     }
 
     distances.forEach(elem => {

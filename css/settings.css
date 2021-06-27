@@ -6,7 +6,7 @@
 .subsection {
     border-top: 2px solid var(--gray);
     border-radius: 2px;
-    width: max-content;
+    width: calc(100% - 1rem);
     margin-bottom: 15px;
 }
 

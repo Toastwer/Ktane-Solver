@@ -13,10 +13,6 @@ $(() => {
     if(_activeModules != null) activeModules = _activeModules;
     
     $.getJSON("../scripts/data.json", function (data) {
-        for(const key in data["modules"]["normal"]) allModules.push(key);
-        for(const key in data["modules"]["needy"]) allModules.push(key);
-        for(const key in data["modules"]["mod"]) allModules.push(key);
-
         if(activeModules.size === 0) {
             data["modules"]["defaultActive"].forEach(module => {
                 addActiveModule(module);
@@ -76,14 +72,40 @@ function updateNavBar() {
     let html = `<li class="navbar-item navbar-item-home">
                     <a>Home</a>
                 </li>`;
-    allModules.forEach(val => {
+
+    for(const val in json["modules"]["normal"]) {
         if(val && activeModules.has(val)) {
-            const name = json["modules"]["normal"][val] || json["modules"]["needy"][val] || json["modules"]["mod"][val];
+            const name = json["modules"]["normal"][val];
             html += `<li class="navbar-item navbar-item-${val}">
                         <a>${name}</a>
                     </li>`;
         }
-    });
+    }
+
+    if(Object.keys(json["modules"]["needy"]).length > 0)
+        html += `<li class="navbar-item divider"></li>`;
+
+    for(const val in json["modules"]["needy"]) {
+        if(val && activeModules.has(val)) {
+            const name = json["modules"]["needy"][val];
+            html += `<li class="navbar-item navbar-item-${val}">
+                        <a>${name}</a>
+                    </li>`;
+        }
+    }
+
+    if(Object.keys(json["modules"]["mod"]).length > 0)
+        html += `<li class="navbar-item divider"></li>`;
+
+    for(const val in json["modules"]["mod"]) {
+        if(val && activeModules.has(val)) {
+            const name = json["modules"]["mod"][val];
+            html += `<li class="navbar-item navbar-item-${val}">
+                        <a>${name}</a>
+                    </li>`;
+        }
+    }
+
     html += `<li class="navbar-item navbar-item-settings">
                 <a>Settings</a>
             </li>`;
@@ -103,6 +125,12 @@ function removeBattery() {
     return batteries;
 }
 
+function setBattery(i) {
+    batteries = i;
+    sessionStorage.setItem("batteries", batteries);
+    return batteries;
+}
+
 function addStrike() {
     strikes++;
     sessionStorage.setItem("strikes", strikes);
@@ -111,6 +139,12 @@ function addStrike() {
 
 function removeStrike() {
     strikes--;
+    sessionStorage.setItem("strikes", strikes);
+    return strikes;
+}
+
+function setStrike(i) {
+    strikes = i;
     sessionStorage.setItem("strikes", strikes);
     return strikes;
 }

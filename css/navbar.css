@@ -7,7 +7,7 @@
 	padding-top: 20px;
 
 	overflow: hidden;
-	transition-duration: 100ms;
+	transition: ease-in-out 150ms;
 	width: 93px;
 }
 
@@ -21,6 +21,20 @@
 	list-style: none;
 	padding-left: 20px;
 	width: 100%;
+}
+
+.navbar-item.divider {
+	width: calc(73px - 20px);
+	margin: 10px;
+
+	border-top: 2px solid gray;
+	border-radius: 2px;
+
+	transition: ease-in-out 150ms;
+}
+
+.navbar:hover .navbar-item.divider  {
+	width: calc(100% - 20px);
 }
 
 .navbar-item a {

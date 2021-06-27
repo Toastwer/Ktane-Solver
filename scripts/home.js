@@ -1,12 +1,43 @@
 $(() => {
     $("#batteries-input .number").html(batteries);
     $("#strikes-input .number").html(strikes);
-    $("#car-input").attr("checked", getIndicator("car").state);
-    $("#frk-input").attr("checked", getIndicator("frk").state);
-    $("#parallel-input").attr("checked", getPort("parallel").state);
+    $("#car-input").prop("checked", getIndicator("car").state);
+    $("#frk-input").prop("checked", getIndicator("frk").state);
+    $("#parallel-input").prop("checked", getPort("parallel").state);
     $("#serial-input").val(serial.input);
 
     validateInputs();
+});
+
+$("body").on("click", "#resetStored", function () {
+    $("#car-input").prop("checked", false);
+    setIndicator("car", { state: false });
+
+    $("#frk-input").prop("checked", false);
+    setIndicator("frk", { state: false });
+
+    $("#parallel-input").prop("checked", false);
+    setPort("parallel", { state: false });
+
+    $("#serial-input").val("");
+    setSerial({ 
+        input: "",
+        vowel: false,
+        lastOdd: false
+    });
+
+    $("#batteries-input .number").html(setBattery(0));
+    $("#strikes-input .number").html(setStrike(0));
+
+    validateInputs();
+
+    sessionStorage.removeItem("selectedKeys");
+    sessionStorage.removeItem("memory");
+    sessionStorage.removeItem("morse");
+    sessionStorage.removeItem("password");
+    sessionStorage.removeItem("stage1Input");
+    sessionStorage.removeItem("stage2Input");
+    sessionStorage.removeItem("wiresimp");
 });
 
 //#region Serial Number
