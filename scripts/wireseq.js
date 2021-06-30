@@ -1,62 +1,135 @@
 let wireSeqJson;
 
 $(() => {
+    const _efficientLayout = sessionStorage.getItem("wireseq_efficient_layout");
+    if(_efficientLayout != null)
+        efficientLayout = JSON.parse(_efficientLayout);
+
+    if(!efficientLayout) {
+        $("#efficient-layout").removeClass("green");
+        $("#efficient-layout").addClass("gray");
+    } else {
+        $("#efficient-layout").removeClass("gray");
+        $("#efficient-layout").addClass("green");
+    }
+
     $.getJSON("../scripts/wireseq.json", function (data) {
         wireSeqJson = data;
     });
 
-    init();
+    updatePage();
 });
 
-function init() {
-    let html = "";
-    for (let i = 0; i < 5; i++) {
-        const wire3 = 3 * (i + 1);
-        const wire1 = wire3 - 2;
-        const wire2 = wire3 - 1;
-        html += 
-        `<div class="panel">
-            <p class="title">Panel ${i + 1}:</p>
-    
-            <div class="wire" id="${wire1}">
-                <p class="subtitle">Wire ${wire1}:</p>
-                <button class="button-hollow red"  id="wire${wire1}-red">Red</button>
-                <button class="button-hollow blue" id="wire${wire1}-blue">Blue</button>
-                <button class="button-hollow black" id="wire${wire1}-black">Black</button>
-                <p class="v-break">To</p>
-                <button class="button-hollow gray" id="wire${wire1}-A">A</button>
-                <button class="button-hollow gray" id="wire${wire1}-B">B</button>
-                <button class="button-hollow gray" id="wire${wire1}-C">C</button>
-                <p class="result">...</p>
-            </div>
-            <div class="wire" id="${wire2}">
-                <p class="subtitle">Wire ${wire2}:</p>
-                <button class="button-hollow red"  id="wire${wire2}-red">Red</button>
-                <button class="button-hollow blue" id="wire${wire2}-blue">Blue</button>
-                <button class="button-hollow black" id="wire${wire2}-black">Black</button>
-                <p class="v-break">To</p>
-                <button class="button-hollow gray" id="wire${wire2}-A">A</button>
-                <button class="button-hollow gray" id="wire${wire2}-B">B</button>
-                <button class="button-hollow gray" id="wire${wire2}-C">C</button>
-                <p class="result">...</p>
-            </div>
-            <div class="wire" id="${wire3}">
-                <p class="subtitle">Wire ${wire3}:</p>
-                <button class="button-hollow red"  id="wire${wire3}-red">Red</button>
-                <button class="button-hollow blue" id="wire${wire3}-blue">Blue</button>
-                <button class="button-hollow black" id="wire${wire3}-black">Black</button>
-                <p class="v-break">To</p>
-                <button class="button-hollow gray" id="wire${wire3}-A">A</button>
-                <button class="button-hollow gray" id="wire${wire3}-B">B</button>
-                <button class="button-hollow gray" id="wire${wire3}-C">C</button>
-                <p class="result">...</p>
-            </div>
-        </div>`;
+$("#efficient-layout").on("click", function() {
+    if(efficientLayout) {
+        $(this).removeClass("green");
+        $(this).addClass("gray");
+    } else {
+        $(this).removeClass("gray");
+        $(this).addClass("green");
     }
-    $(".container .section").html(html);
 
-    for (let i = 4; i <= 15; i++) {
-        $(`#${i} .button-hollow`).addClass("disabled");
+    efficientLayout = !efficientLayout;
+    sessionStorage.setItem("wireseq_efficient_layout", JSON.stringify(efficientLayout));
+    updatePage();
+});
+
+let efficientLayout = false;
+function updatePage() {
+    if(efficientLayout) {
+        let html = "";
+        for (let i = 0; i < 4; i++) {
+            const wire3 = 3 * (i + 1);
+            const wire1 = wire3 - 2;
+            const wire2 = wire3 - 1;
+            html += 
+            `<div class="panel efficient">
+                <div class="wire" id="${wire1}">
+                    <p class="subtitle">${wire1}:</p>
+                    <button class="button-hollow red"  id="wire${wire1}-red">Red</button>
+                    <button class="button-hollow blue" id="wire${wire1}-blue">Blue</button>
+                    <button class="button-hollow black" id="wire${wire1}-black">Black</button>
+                    <p class="v-break">></p>
+                    <button class="button-hollow s-2 gray" id="wire${wire1}-A">A</button>
+                    <button class="button-hollow s-2 gray" id="wire${wire1}-B">B</button>
+                    <button class="button-hollow s-2 gray" id="wire${wire1}-C">C</button>
+                    <p class="result">...</p>
+                </div>
+                <div class="wire" id="${wire2}">
+                    <p class="subtitle">${wire2}:</p>
+                    <button class="button-hollow red"  id="wire${wire2}-red">Red</button>
+                    <button class="button-hollow blue" id="wire${wire2}-blue">Blue</button>
+                    <button class="button-hollow black" id="wire${wire2}-black">Black</button>
+                    <p class="v-break">></p>
+                    <button class="button-hollow s-2 gray" id="wire${wire2}-A">A</button>
+                    <button class="button-hollow s-2 gray" id="wire${wire2}-B">B</button>
+                    <button class="button-hollow s-2 gray" id="wire${wire2}-C">C</button>
+                    <p class="result">...</p>
+                </div>
+                <div class="wire" id="${wire3}">
+                    <p class="subtitle">${wire3}:</p>
+                    <button class="button-hollow red"  id="wire${wire3}-red">Red</button>
+                    <button class="button-hollow blue" id="wire${wire3}-blue">Blue</button>
+                    <button class="button-hollow black" id="wire${wire3}-black">Black</button>
+                    <p class="v-break">></p>
+                    <button class="button-hollow s-2 gray" id="wire${wire3}-A">A</button>
+                    <button class="button-hollow s-2 gray" id="wire${wire3}-B">B</button>
+                    <button class="button-hollow s-2 gray" id="wire${wire3}-C">C</button>
+                    <p class="result">...</p>
+                </div>
+            </div>`;
+        }
+        $(".container .section").html(html);
+    } else {
+        let html = "";
+        for (let i = 0; i < 4; i++) {
+            const wire3 = 3 * (i + 1);
+            const wire1 = wire3 - 2;
+            const wire2 = wire3 - 1;
+            html += 
+            `<div class="panel">
+                <p class="title">Panel ${i + 1}:</p>
+        
+                <div class="wire" id="${wire1}">
+                    <p class="subtitle">Wire ${wire1}:</p>
+                    <button class="button-hollow red"  id="wire${wire1}-red">Red</button>
+                    <button class="button-hollow blue" id="wire${wire1}-blue">Blue</button>
+                    <button class="button-hollow black" id="wire${wire1}-black">Black</button>
+                    <p class="v-break">To</p>
+                    <button class="button-hollow gray" id="wire${wire1}-A">A</button>
+                    <button class="button-hollow gray" id="wire${wire1}-B">B</button>
+                    <button class="button-hollow gray" id="wire${wire1}-C">C</button>
+                    <p class="result">...</p>
+                </div>
+                <div class="wire" id="${wire2}">
+                    <p class="subtitle">Wire ${wire2}:</p>
+                    <button class="button-hollow red"  id="wire${wire2}-red">Red</button>
+                    <button class="button-hollow blue" id="wire${wire2}-blue">Blue</button>
+                    <button class="button-hollow black" id="wire${wire2}-black">Black</button>
+                    <p class="v-break">To</p>
+                    <button class="button-hollow gray" id="wire${wire2}-A">A</button>
+                    <button class="button-hollow gray" id="wire${wire2}-B">B</button>
+                    <button class="button-hollow gray" id="wire${wire2}-C">C</button>
+                    <p class="result">...</p>
+                </div>
+                <div class="wire" id="${wire3}">
+                    <p class="subtitle">Wire ${wire3}:</p>
+                    <button class="button-hollow red"  id="wire${wire3}-red">Red</button>
+                    <button class="button-hollow blue" id="wire${wire3}-blue">Blue</button>
+                    <button class="button-hollow black" id="wire${wire3}-black">Black</button>
+                    <p class="v-break">To</p>
+                    <button class="button-hollow gray" id="wire${wire3}-A">A</button>
+                    <button class="button-hollow gray" id="wire${wire3}-B">B</button>
+                    <button class="button-hollow gray" id="wire${wire3}-C">C</button>
+                    <p class="result">...</p>
+                </div>
+            </div>`;
+        }
+        $(".container .section").html(html);
+    
+        for (let i = 4; i <= 15; i++) {
+            $(`#${i} .button-hollow`).addClass("disabled");
+        }
     }
 }
 
@@ -105,7 +178,9 @@ $("body").on("click", ".panel button", function() {
         colors.set(wireInt, type);
     }
 
-    checkActive();
+    if(!efficientLayout)
+        checkActive();
+
     getResults();
 });
 

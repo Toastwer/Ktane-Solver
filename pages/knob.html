@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html lang="en" dir="ltr">
+<html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
 
@@ -19,12 +19,12 @@
 		<ul class="navbar"></ul>
 
 		<div id="content">
-			<button class="button-hollow s3 gray" id="only show first three" style="float: right; width: max-content; padding: 5px 10px; margin-top: 84px;">Isolate ideal lights</button>
+			<button class="button-hollow s3 gray" id="isolate-ideal" style="float: right; width: max-content; padding: 5px 10px; margin-top: 84px;">Isolate ideal lights</button>
 			<h1 class="title">Knob:</h1>
 			
 			<div class="container">
 				<p class="subtitle">I recommend looking at the four lights in a square in the right half.</p>
-				<div class="section">
+				<div class="section full">
 					<p class="title">Up:</p>
 					<div class="lights">
 						<div class="half">
@@ -32,8 +32,8 @@
 							<span class="on"></span><span class="on"></span><span class="on"></span>
 						</div>
 						<div class="half">
-							<span class="off"></span><span class="on"></span><span class="on"></span>
-							<span class="on"></span><span class="off"></span><span class="on"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="on"></span>
+							<span class="on hl"></span><span class="off hl"></span><span class="on"></span>
 						</div>
 					</div>
 
@@ -45,12 +45,12 @@
 							<span class="off"></span><span class="on"></span><span class="on"></span>
 						</div>
 						<div class="half">
-							<span class="off"></span><span class="on"></span><span class="off"></span>
-							<span class="off"></span><span class="on"></span><span class="on"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="off"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="on"></span>
 						</div>
 					</div>
 				</div>
-				<div class="section">
+				<div class="section full">
 					<p class="title">Down:</p>
 					<div class="lights">
 						<div class="half">
@@ -58,8 +58,8 @@
 							<span class="on"></span><span class="on"></span><span class="on"></span>
 						</div>
 						<div class="half">
-							<span class="off"></span><span class="off"></span><span class="on"></span>
-							<span class="on"></span><span class="off"></span><span class="on"></span>
+							<span class="off hl"></span><span class="off hl"></span><span class="on"></span>
+							<span class="on hl"></span><span class="off hl"></span><span class="on"></span>
 						</div>
 					</div>
 
@@ -71,12 +71,12 @@
 							<span class="off"></span><span class="on"></span><span class="off"></span>
 						</div>
 						<div class="half">
-							<span class="off"></span><span class="on"></span><span class="off"></span>
-							<span class="off"></span><span class="off"></span><span class="on"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="off"></span>
+							<span class="off hl"></span><span class="off hl"></span><span class="on"></span>
 						</div>
 					</div>
 				</div>
-				<div class="section">
+				<div class="section full">
 					<p class="title">Left:</p>
 					<div class="lights">
 						<div class="half">
@@ -84,8 +84,8 @@
 							<span class="on"></span><span class="off"></span><span class="off"></span>
 						</div>
 						<div class="half">
-							<span class="off"></span><span class="on"></span><span class="off"></span>
-							<span class="on"></span><span class="on"></span><span class="on"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="off"></span>
+							<span class="on hl"></span><span class="on hl"></span><span class="on"></span>
 						</div>
 					</div>
 
@@ -97,12 +97,12 @@
 							<span class="off"></span><span class="off"></span><span class="off"></span>
 						</div>
 						<div class="half">
-							<span class="off"></span><span class="on"></span><span class="off"></span>
-							<span class="on"></span><span class="on"></span><span class="off"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="off"></span>
+							<span class="on hl"></span><span class="on hl"></span><span class="off"></span>
 						</div>
 					</div>
 				</div>
-				<div class="section">
+				<div class="section full">
 					<p class="title">Right:</p>
 					<div class="lights">
 						<div class="half">
@@ -110,8 +110,8 @@
 							<span class="on"></span><span class="on"></span><span class="on"></span>
 						</div>
 						<div class="half">
-							<span class="on"></span><span class="on"></span><span class="on"></span>
-							<span class="off"></span><span class="on"></span><span class="off"></span>
+							<span class="on hl"></span><span class="on hl"></span><span class="on"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="off"></span>
 						</div>
 					</div>
 
@@ -123,9 +123,59 @@
 							<span class="on"></span><span class="on"></span><span class="on"></span>
 						</div>
 						<div class="half">
-							<span class="on"></span><span class="off"></span><span class="off"></span>
-							<span class="off"></span><span class="on"></span><span class="off"></span>
+							<span class="on hl"></span><span class="off hl"></span><span class="off"></span>
+							<span class="off hl"></span><span class="on hl"></span><span class="off"></span>
 						</div>
+					</div>
+				</div>
+
+				<div class="section compact">
+					<p class="title">Up:</p>
+					<div class="lights compact">
+						<span class="off"></span><span class="on"></span>
+						<span class="on"></span><span class="off"></span>
+					</div>
+
+					<p> or </p>
+
+					<div class="lights compact">
+						<span class="off"></span><span class="on"></span>
+						<span class="off"></span><span class="on"></span>
+					</div>
+				</div>
+				<div class="section compact">
+					<p class="title">Down:</p>
+					<div class="lights compact">
+						<span class="off"></span><span class="off"></span>
+						<span class="on"></span><span class="off"></span>
+					</div>
+
+					<p> or </p>
+
+					<div class="lights compact">
+						<span class="off"></span><span class="on"></span>
+					<span class="off"></span><span class="off"></span>
+					</div>
+				</div>
+				<div class="section compact">
+					<p class="title">Left:</p>
+					<div class="lights compact">
+						<span class="off"></span><span class="on"></span>
+						<span class="on"></span><span class="on"></span>
+					</div>
+				</div>
+				<div class="section compact">
+					<p class="title">Right:</p>
+					<div class="lights compact">
+						<span class="on"></span><span class="on"></span>
+						<span class="off"></span><span class="on"></span>
+					</div>
+
+					<p> or </p>
+
+					<div class="lights compact">
+						<span class="on"></span><span class="off"></span>
+						<span class="off"></span><span class="on"></span>
 					</div>
 				</div>
 			</div>
@@ -161,6 +211,10 @@
 			padding: 5px
 		}
 
+		.lights.compact {
+			grid-gap: 2px;
+		}
+
 		.half {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
@@ -173,6 +227,8 @@
 			width: 25px;
 			background-color: var(--green);
 			border-radius: 50%;
+
+			filter: brightness(80%) contrast(90%);
 		}
 
 		.off {
@@ -181,6 +237,67 @@
 			width: 25px;
 			background-color: var(--gray);
 			border-radius: 50%;
+
+			filter: brightness(80%) contrast(90%);
+		}
+
+		.compact .on,
+		.on.hl {
+			filter: brightness(120%) contrast(120%);
+		}
+
+		.compact .off,
+		.off.hl {
+			filter: brightness(120%) contrast(120%);
 		}
 	</style>
+
+	<script>
+		let compact = false;
+		$(() => {
+			const _compact = sessionStorage.getItem("knob_compact");
+			if(_compact != null)
+				compact = JSON.parse(_compact);
+
+			if(!compact) {
+				$("#isolate-ideal").removeClass("green");
+				$("#isolate-ideal").addClass("gray");
+			} else {
+				$("#isolate-ideal").removeClass("gray");
+				$("#isolate-ideal").addClass("green");
+			}
+
+			updatePage();
+		});
+
+		$("#isolate-ideal").on("click", function() {
+			if(compact) {
+				$(this).removeClass("green");
+				$(this).addClass("gray");
+			} else {
+				$(this).removeClass("gray");
+				$(this).addClass("green");
+			}
+
+			compact = !compact;
+			sessionStorage.setItem("knob_compact", JSON.stringify(compact));
+			updatePage();
+		});
+
+		function updatePage() {
+			$(".section.full").each(function() {
+				if(compact)
+					$(this).css("display", "none");
+				else
+					$(this).css("display", "");
+			});
+
+			$(".section.compact").each(function() {
+				if(compact)
+					$(this).css("display", "");
+				else
+					$(this).css("display", "none");
+			});
+		}
+	</script>
 </html>

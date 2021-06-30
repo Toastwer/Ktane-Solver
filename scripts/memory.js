@@ -4,17 +4,16 @@ let activeStage = "1-1";
 
 $(".stage1.2, .stage1.3, .stage2, .stage3, .stage4, .stage5").hide();
 $(() => {
-    //TODO: sessionStore
     // const _memory =  sessionStorage.getItem("memory").split("|");
     // if(_memory != null) {
-    //     positions =  _memory[0];
-    //     labels =  _memory[1];
-    //     activeStage =  _memory[2];
+    //     positions =  JSON.parse(_memory[0]);
+    //     labels =  JSON.parse(_memory[1]);
+    //     activeStage =  JSON.parse(_memory[2]);
     // }
 });
 
 // function sessionStore() {
-//     sessionStorage.setItem("memory", positions + "|" + label + "|" + activeStage);
+//     sessionStorage.setItem("memory", JSON.stringify(positions) + "|" + JSON.stringify(label) + "|" + JSON.stringify(activeStage));
 // }
 
 $("body").on("click", ".button-hollow", function() {
@@ -182,11 +181,11 @@ function getResult(stage, num) {
     }
 }
 
-function outText(stage, text) {
-    let textArr = text.split("*");
-    textArr.forEach((entry, index) => {
-        if(index < textArr.length - 1)
-            textArr[index] = entry + index % 2 === 0 ? "<b>" : "</b>";
-    });
-    $(`.${stage}.2 .outText`).html(textArr.join(""));
-}
+// function outText(stage, text) {
+//     let textArr = text.split("*");
+//     textArr.forEach((entry, index) => {
+//         if(index < textArr.length - 1)
+//             textArr[index] = entry + index % 2 === 0 ? "<b>" : "</b>";
+//     });
+//     $(`.${stage}.2 .outText`).html(textArr.join(""));
+// }

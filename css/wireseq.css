@@ -1,10 +1,7 @@
-.v-break {
-    display: inline;
-    border-right: 3px var(--gray) solid;
-    border-left: 3px var(--gray) solid;
-	border-radius: 2px;
-	padding: 0 1rem;
-	margin: 1rem 1rem;
+.panel.efficient {
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 .panel .title {
@@ -17,6 +14,15 @@
     margin-left: 5%;
 }
 
+.efficient .subtitle {
+    display: inline-block;
+    border-right: 3px var(--gray) solid;
+	border-radius: 2px;
+	padding: 0 1rem 0 0;
+    margin: 0 1rem 0 0;
+    width: 20px;
+}
+
 .subtitle {
     display: inline-block;
     border-right: 3px var(--gray) solid;
@@ -24,6 +30,24 @@
 	padding: 0 1rem 0 0;
     margin: 0 1rem 0 0;
     width: 90px;
+}
+
+.efficient .v-break {
+    display: inline;
+    border-right: 3px var(--gray) solid;
+    border-left: 3px var(--gray) solid;
+	border-radius: 2px;
+	padding: 0 0.6rem;
+	margin: 0.6rem 0.6rem;
+}
+
+.v-break {
+    display: inline;
+    border-right: 3px var(--gray) solid;
+    border-left: 3px var(--gray) solid;
+	border-radius: 2px;
+	padding: 0 1rem;
+	margin: 1rem 1rem;
 }
 
 .result {
@@ -49,7 +73,7 @@
 }
 
 .wire {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .result.red {

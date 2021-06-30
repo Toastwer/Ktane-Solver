@@ -8,6 +8,17 @@ let serial = new Object();
 let batteries = 0;
 let strikes = 0;
 
+// TODO: add session store / reset to button
+// TODO: add session reset to keypads
+// TODO: add session store / reset to simon says
+// TODO: add session reset to who's on first
+// TODO: add session store / reset to memory
+// TODO: add session reset to simple wires
+// TODO: add session store / reset to complicated wires
+// TODO: add session store / reset to wire sequences
+// TODO: add session store / reset to maze
+// TODO: add session reset to password
+
 $(() => {
     const _activeModules = new Set(JSON.parse(sessionStorage.getItem("activeModules")));
     if(_activeModules != null) activeModules = _activeModules;
